@@ -1,8 +1,10 @@
 /* img{
     background-image: url("./");
 } */
+
+
 .card{
-    width: 400px;
+    width: 700px;
     height: 400px;
 
 }
@@ -11,4 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card-title{
+    margin-top: 250px;
 }

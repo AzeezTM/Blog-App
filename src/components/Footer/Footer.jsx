@@ -27,7 +27,7 @@ function Footer() {
                 <div class="row primary">
              <div class="column blog">
            
-             <h3><span className="text-info">Blog</span> App</h3>
+             <h3 className="text-info">BlogApp</h3>
            
             
              <div class="social">
@@ -144,6 +144,7 @@ function Footer() {
              <a href="">Social</a>
            
              </div> */}
+             <hr />
               <p className="">Copyright &copy; 2021 Blog App</p>
            </div>
            

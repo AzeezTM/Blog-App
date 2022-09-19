@@ -4,7 +4,7 @@ import "./Home.css"
 function Home() {
   return (
     <>
-     <div className="muby">
+     <div className="muby mt-5 mb-5">
             <div className="cardi">
             <div className="card bg-dark text-white border-0">
                 <img src="./card1.jpg" className="card-img" alt="background" 
