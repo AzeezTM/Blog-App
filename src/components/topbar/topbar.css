@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0;
     padding: 0;
 }
@@ -66,4 +66,8 @@ a{
     font-size: 20px;
     font-weight:400;
 }
+ */
 
+ .navbar{
+    width: 100%;
+ }
