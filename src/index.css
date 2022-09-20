@@ -1,9 +1,18 @@
 @import url('/node_modules/bootstrap/dist/css/bootstrap.min.css');
+/* 
+:root{
+  --color: red;
+  --bg: aqua;
+  --font: monospace;
+} */
 
 body {
   margin: 0;
- 
 }
+/* h1,h2,h3{
+  color: var(--color);
+  background-color: var(-);
+} */
 
 /* :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

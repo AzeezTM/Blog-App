@@ -39,7 +39,7 @@ function Topbar() {
 
     //New Navbar
 
-   <div>
+   <div className="navm">
      {/* <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand text-info" href="#">
@@ -185,7 +185,7 @@ function Topbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Blog Posts
+                Category
               </a>
               <ul className="dropdown-menu">
                 <li>
