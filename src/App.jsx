@@ -4,6 +4,7 @@ import Signup from './components/signup/Signup';
 import Topbar from './components/topbar/Topbar';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
+import Profile from './components/profile/profile';
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
    <main>
      
     <Topbar />
+    <Profile/>
      {/* <Signup/> */}
-     <Home/>
+     {/* <Home/> */}
 
      {/* <Routes>
           <Route path='/' element={<Home />} />
