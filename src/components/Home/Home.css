@@ -1,20 +1,29 @@
-/* img{
-    background-image: url("./");
-} */
-
-
-.card{
-    width: 700px;
-    height: 400px;
-
+.posterNav {
+  /* min-width: 100%; */
+  min-height: 70vh;
+  background-color: rgb(53, 108, 153);
 }
 
-.cardi{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.firstdiv {
+  display: flex;
+  justify-content: space-around;
 }
 
-.card-title{
-    margin-top: 250px;
+.barIcon {
+  color: white;
+  /* font-size: 25px; */
 }
+
+.login {
+  color: white;
+  font-size: 20px;
+}
+
+.dropdown-menu{
+    background-color: white;
+    width: 100px;
+}
+
+.pageTitle{
+    color: white;
+} 
