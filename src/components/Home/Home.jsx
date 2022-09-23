@@ -1,32 +1,68 @@
-import React from 'react'
-import "./Home.css"
+import React from "react";
+import "./Home.css";
+import Header from "../Header/Header";
+import Posts from "../Posts/Posts";
+import "./Home.css";
+import Topbar from "../topbar/Topbar";
 
 function Home() {
   return (
     <>
-     <div className="muby mt-5 mb-5">
-            <div className="cardi">
-            <div className="card bg-dark text-white border-0">
-                <img src="./card1.jpg" className="card-img" alt="background" 
-                height= "400px" />
-                <div className="card-img-overlay d-flex flex-column 
-                justify-content-center ms-5">
-                    <div className="container">
-                    <h5 className="card-title display-3 fw-bolder mb-0">REACT BLOG APP</h5>
-                    <p className="card-text lead fs-2 fw-bolder text-info">
-                        CHECK OUR BLOG</p>
+      <div className="">
+        <div className="posterPag">
+          <div className="posterNav ">
+            <div className="firstdiv">
+              {/* <span><i className="barIcon fa-solid fa-bars"></i></span> */}
 
-                    </div>
-            </div>
-                    
-                   
-                </div>
-            </div>
-            
+              {/* <div className="drpdown"> */}
+              {/* <span><i className="barIcon fa-solid fa-bars"></i></span> */}
 
+              <div class="dropdown">
+                <button
+                  className="btn  dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i className="barIcon fa-solid fa-bars"></i>
+                  </span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Home
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      About
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Contact
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              {/* </div> */}
+
+              <div className="loginDiv">
+                <span className="login">Login</span>
+              </div>
+            </div>
+
+            <h1 className="pageTitle text-center fw-bold mt-5">
+              <i>The Ants of The Mind</i>
+            </h1>
+            <Topbar />
+          </div>
         </div>
+        <Posts />
+      </div>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
