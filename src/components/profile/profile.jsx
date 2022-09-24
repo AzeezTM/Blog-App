@@ -50,7 +50,7 @@ function Profile() {
       param.target.innerText = "Edit"
 
     }
-    
+
   }
   function editInfo(param) {
     let info = document.getElementById("info");
@@ -68,29 +68,26 @@ function Profile() {
       param.target.innerText = "Edit"
 
     }
-    
+
   }
 
   return (
     <div className="App">
 
-
+      <input type="file" id="file" onChange={previewImg} hidden />
+      <input type="file" id="fil" onChange={previewcoverimg} hidden />
       <div className='pp' >
-
-        <input type="file" id="file" onChange={previewImg} hidden />
-        <input type="file" id="fil" onChange={previewcoverimg} hidden />
-
         <div className="card " id="cover-pic" >
-          <img id="cover-pi" className="car card-img-top w-100 h-100" src={fil} alt="Card image" />
+          <img id="cover-pi" className="card-img-top w-100 h-100" src={fil} alt="Card image" />
           <div className="card-img-overlay ">
-            <button className="btn btn-primary" onClick={coverbtn}>Edit cover photo</button>
+            <button className="btn editCP" onClick={coverbtn}>Edit cover photo</button>
           </div>
         </div>
         <div className='profile-box modal-header'>
           <div className='card' id='dp'>
             <img className="card card-img rounded-circle bg-dark w-100 h-100" src={file} id="img" alt="" />
             <div className="card-img-overlay">
-              <button className="btn btn-primary" onClick={me}>📷</button>
+              <button className="btn editDiP btn-primary" onClick={me}>📷kk</button>
             </div>
           </div>
           <h2 id='user-name' className='navbar'>
@@ -150,12 +147,12 @@ function Profile() {
 
         </div>
 
-<div className='navbar w-75 mx-auto text-light'>
-  <div>Post</div>
-    <div>About</div>
-    <div >Photos</div>
-    <div>Videos</div>
-</div>
+        <div className='navbar w-75 mx-auto text-light'>
+          <div>Post</div>
+          <div>About</div>
+          <div >Photos</div>
+          <div>Videos</div>
+        </div>
       </div>
     </div>
   )
