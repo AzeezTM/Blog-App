@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './react.svg'
+import cameraLogo from './camera.png'
 import reactLog from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
 import './profile.css'
 import { useEffect } from 'react'
@@ -80,14 +81,14 @@ function Profile() {
         <div className="card " id="cover-pic" >
           <img id="cover-pi" className="card-img-top w-100 h-100" src={fil} alt="Card image" />
           <div className="card-img-overlay ">
-            <button className="btn editCP" onClick={coverbtn}>Edit cover photo</button>
+            <button className="editCP" onClick={coverbtn}>Edit cover photo</button>
           </div>
         </div>
         <div className='profile-box modal-header'>
           <div className='card' id='dp'>
             <img className="card card-img rounded-circle bg-dark w-100 h-100" src={file} id="img" alt="" />
             <div className="card-img-overlay">
-              <button className="btn editDiP btn-primary" onClick={me}>📷kk</button>
+              <button className="editDP " onClick={me}><img src={cameraLogo} width={30} alt="" /></button>
             </div>
           </div>
           <h2 id='user-name' className='navbar'>
@@ -96,8 +97,8 @@ function Profile() {
           </h2>
 
           <div className='addto'>
-            <button className='d-block mb-2'>Add to story</button>
-            <button className=" bg-primary pro" data-bs-toggle="modal" data-bs-target="#myModal" >✒️Edit profile</button>
+            <button className='d-block mb-2 addtostory'>Add to story</button>
+            <button className="editprofile" data-bs-toggle="modal" data-bs-target="#myModal" >✒️Edit profile</button>
 
           </div>
 
@@ -121,15 +122,15 @@ function Profile() {
                   <textarea className='mx-auto ' name="" id="bio" cols="30" rows="2" readOnly></textarea>
                   <div className='w-100'>
                     <div className='navbar'><div>Customize your intro</div> <a className='text-primary' onClick={ev => editInfo(ev)}>Edit</a></div>
-                    <div className="input-group w-75">
+                    <div className="input-group">
                       <span className="input-group-text btn btn-secondary">💼</span>
                       <input id='info' type="text" className="form-control " placeholder="Work" readOnly />
                     </div>
-                    <div className="input-group w-75 mt-1 mb-1">
+                    <div className="input-group mt-1 mb-1">
                       <span className="input-group-text btn btn-secondary">🏠</span>
                       <input id='address' type="text" className="form-control w-25" placeholder="Address" readOnly />
                     </div>
-                    <div className="input-group w-75 ">
+                    <div className="input-group ">
                       <span className="input-group-text btn btn-secondary">🎓</span>
                       <input id='education' type="text" className="form-control w-25" placeholder="Education" readOnly />
                     </div>
