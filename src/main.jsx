@@ -13,6 +13,7 @@ import './index.css'
 import Topbar from './components/topbar/Topbar';
 import Home from './components/Home/Home';
 import Signup from './components/signup/Signup';
+import Profile from './components/profile/profile';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/",  element: <Home/>
+   
+  },
+  {
+    path: "/profile", element:   <Profile/>
    
   },
 ]);

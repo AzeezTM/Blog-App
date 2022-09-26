@@ -6,6 +6,8 @@ import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import SinglePosts from './components/Single/SinglePosts';
 import Comments from './components/Comments/Comments';
+import Profile from './components/profile/profile';
+
 
 function App() {
   
@@ -19,7 +21,7 @@ function App() {
      <Home/>
      {/* <SinglePosts/> */}
     
-     
+   
         <Footer/>
 
      
