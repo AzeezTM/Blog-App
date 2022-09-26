@@ -1,6 +1,9 @@
 import React from "react";
 import "./Post.css";
+
 function Post() {
+
+  
   return (
     <div className="display-post d-flex justify-content-center">
       <div className="post">
