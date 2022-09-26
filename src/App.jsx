@@ -5,9 +5,21 @@ import Topbar from './components/topbar/Topbar';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import SinglePosts from './components/Single/SinglePosts';
-
+import Comments from './components/Comments/Comments';
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+//   Route,
+// } from "react-router-dom";
 
 function App() {
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/", element: <Home/>
+     
+  //   },
+  // ]);
+  
   
 
   return (
@@ -15,9 +27,9 @@ function App() {
      
     {/* <Topbar /> */}
      {/* <Signup/> */}
-     <Home/>
-     {/* <SinglePosts/> */}
-
+     {/* <Home/> */}
+     <SinglePosts/>
+    
      {/* <Routes>
           <Route path='/' element={<Home />} />
           <Route path='tickets/:id' element={<Tickets />} />
@@ -28,7 +40,8 @@ function App() {
           <Route path='login' element={<Login />} />
         </Routes> */}
         <Footer/>
-       
+
+     
    </main>
   )
 }

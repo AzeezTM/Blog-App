@@ -1,4 +1,6 @@
+import { NavLink } from "react-router-dom";
 import "./topbar.css";
+
 
 function Topbar() {
   return (
@@ -11,12 +13,18 @@ function Topbar() {
            </div> */}
       <div className="div ">
         <div className="sectB">
-          <nav>
-            <a className="btn1 item text-light" href="">
-              {" "}
-              Tech
-            </a>
-          </nav>
+          
+          <NavLink
+          className=" btn1 item text-light"
+                to="Tech"
+                style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                {/* <FontAwesomeIcon icon={solid('fa-bars')} /> */}
+                Tech
+              </NavLink>
+          
           <nav>
             <a className=" btn1 item text-light" href="">
               {" "}

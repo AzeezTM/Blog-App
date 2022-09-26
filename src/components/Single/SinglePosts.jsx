@@ -1,5 +1,6 @@
 import React from "react";
 import "./SinglePosts.css";
+import Comments from "../Comments/Comments";
 
 function SinglePosts() {
   return (
@@ -36,8 +37,18 @@ function SinglePosts() {
             Voluptate, corrupti! Expedita autem dolor iusto dignissimos.
             Dolorem.
           </p>
+          <br />
+          <hr />
+          <Comments 
+     commentsUrl="http://127.0.0.1:5173/"
+     currentUserId="1"
+     />
+
         </div>
+        <hr />
+       
       </div>
+    
     </div>
   );
 }
