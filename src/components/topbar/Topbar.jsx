@@ -1,46 +1,66 @@
+import { NavLink } from "react-router-dom";
 import "./topbar.css";
+
 
 function Topbar() {
   return (
-    //       <div className="topbar">
+    <div className="topbar">
+      {/* <div className="sectA">
+           <i class="icon fa-brands fa-square-facebook"></i>
+           <i class=" icon fa-brands fa-square-instagram"></i>
+           <i class="icon fa-brands fa-square-twitter"></i>
+           <i class="icon fa-brands fa-pinterest"></i>
+           </div> */}
+      <div className="div ">
+        <div className="sectB">
+          
+          <NavLink
+          className=" btn1 item text-light"
+                to="Tech"
+                style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                {/* <FontAwesomeIcon icon={solid('fa-bars')} /> */}
+                Tech
+              </NavLink>
+          
+          <nav>
+            <a className=" btn1 item text-light" href="">
+              {" "}
+              Sport
+            </a>
+          </nav>
+          <nav>
+            <a href="" className=" btn1 item text-light">
+              Entertainment
+            </a>
+          </nav>
+          <nav>
+            <a href="" className=" btn1 item text-light">
+              Nature
+            </a>
+          </nav>
+        </div>
+      </div>
 
-    //       <div className="sectA">
-    //        <i class="icon fa-brands fa-square-facebook"></i>
-    //        <i class=" icon fa-brands fa-square-instagram"></i>
-    //        <i class="icon fa-brands fa-square-twitter"></i>
-    //        <i class="icon fa-brands fa-pinterest"></i>
-    //        </div>
-    //        <div className="sectB">
-    //            <nav >
-    //            <a className="btn1 item" href=""> Home</a>
-    //            </nav>
-    //            <nav >
-    //            <a className=" btn1 item" href=""> About</a>
-    //            </nav>
-    //            <nav >
-    //             <a href="" className=" btn1 item">Contact</a>
-    //            </nav>
+      {/* <div className="sectC">
 
-    //        </div>
-
-    //        <div className="sectC">
-
-    //             <a href="" className="btn item"> Sign-Up</a>
-    //            <a href="" className="btn item"> Login
-    //            <i class=" fa-solid fa-right-to-bracket"></i>
-    //            </a>
-    //            <span className="icon">
-    //              <i class="item  fa-solid fa-user" ></i>
-    //                 Profile
-    //            </span>
-    //        </div>
-
-    //    </div>
+                <a href="" className="btn item"> Sign-Up</a>
+               <a href="" className="btn item"> Login
+               <i class=" fa-solid fa-right-to-bracket"></i>
+               </a>
+               <span className="icon">
+                 <i class="item  fa-solid fa-user" ></i>
+                    Profile
+               </span>
+           </div> */}
+    </div>
 
     //New Navbar
 
-   <div>
-     {/* <nav className="navbar navbar-expand-lg bg-light">
+    //  <div className="navm">
+    /* <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand text-info" href="#">
           BlogApp
@@ -122,12 +142,9 @@ function Topbar() {
           </div>
         </div>
       </div>
-    </nav> */}
+    </nav> */
 
-
-
-
-<nav className="navbar navbar-expand-lg navbar-light  py-3 shadow-sm">
+    /* <nav className="navbar navbar-expand-lg navbar-light  py-3 shadow-sm">
           <div className="container-fluid">
           <a className="navbar-brand text-info fw-bold" href="#">
           <h3 className="fw-bold">BlogApp</h3>
@@ -158,13 +175,13 @@ function Topbar() {
                     Home
                   </a>
                 </li>
-                {/* <li className="nav-item">
+                <li className="nav-item">
                                 <a className="nav-link" to="/products">Products</a>
-                            </li> */}
+                            </li> 
 
-                {/* <li className="nav-item">
+                 <li className="nav-item">
                                 <a className="nav-link" to="/about">About</a>
-                            </li> */}
+                            </li>
 
             <li className="nav-item">
               <a className="nav-link" href="#">
@@ -185,7 +202,7 @@ function Topbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Blog Posts
+                Category
               </a>
               <ul className="dropdown-menu">
                 <li>
@@ -225,8 +242,8 @@ function Topbar() {
               </div>
             </div>
           </div>
-        </nav>
-   </div>
+        </nav> */
+    //  </div>
   );
 }
 
