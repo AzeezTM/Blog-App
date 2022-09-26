@@ -145,7 +145,7 @@ function Footer() {
            
              </div> */}
              <hr />
-              <p className="">Copyright &copy; 2021 Blog App</p>
+              <p className="">Copyright &copy; 2022 Dev. ATM</p>
            </div>
            
                                
