@@ -30,10 +30,6 @@ a {
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
-  
-  
-  
-
   div{
     font-weight: 800;
   }
@@ -96,7 +92,7 @@ a {
     height: 180px;
   }
   .input-group{
-    
+<<<<
     border: none !important;
   }
   .editCP{
@@ -104,7 +100,7 @@ a {
 
   }
   .editDP{
-    
+
     margin-left: -15px;
     padding: 2px;
     border: solid white 6px;
