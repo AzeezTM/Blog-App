@@ -11,18 +11,19 @@ import Profile from './components/profile/profile';
 
 
 
+
 function App() {
   
   
 
   return (
    <main>
-    {/* <Topbar /> */}
+    <Topbar />
 {/* <Header/> */}
-    <Profile/>
+    {/* <Profile/> */}
      {/* <Signup/> */}
 
-     <Home/>
+     {/* <Home/> */}
      {/* <SinglePosts/> */}
     
    
