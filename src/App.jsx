@@ -16,8 +16,8 @@ function App() {
      
     {/* <Topbar /> */}
      {/* <Signup/> */}
-     {/* <Home/> */}
-     <SinglePosts/>
+     <Home/>
+     {/* <SinglePosts/> */}
     
      
         <Footer/>
