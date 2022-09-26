@@ -1,7 +1,7 @@
 
 // import './App.css'
 import Signup from './components/signup/Signup'
-import Topbar from './components/topbar/Topbar'
+import Header from './components/Home/Home'
 import Profile from './components/profile/profile'
 
 
