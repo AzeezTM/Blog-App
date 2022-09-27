@@ -1,20 +1,117 @@
-/* img{
-    background-image: url("./");
-} */
-
-
-.card{
-    width: 700px;
-    height: 400px;
-
+.posterNav {
+  /* min-width: 100%; */
+  min-height: 55vh;
+  background-color: rgb(53, 108, 153);
 }
 
-.cardi{
+.firstdiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.barIcon {
+  color: white;
+  /* font-size: 25px; */
+}
+
+.login {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.dropdown-menu{
+    background-color: white;
+    width: 100px;
+}
+
+.pageTitle{
+    color: white;
+} 
+.icon{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+
+   /* SideBarDATA */
+
+   .menu-bars{
+    margin-left: 1rem;
+    font-size: 2rem;
+    background-color: none;
+   }
+
+   .nav-menu{
+    background-color: white;
+    width: 350px;
+    height: 50vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
+    position: fixed;
+    top: 0;
+    right: 100%;
+    z-index: 100;
+    transition: 1000ms;
+  
+   }
 
-.card-title{
-    margin-top: 250px;
-}
+   .nav-menu.active{
+    left: 0;
+
+    transition: 350ms;
+   }
+
+   .nav-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 50px;
+   }
+
+   .nav-text a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* padding: 0 16px; */
+    border-radius: 4px;
+   }
+   .nav-text a:hover {
+    background-color:  rgb(53, 108, 153);;
+    color: white;
+    width: 200px;
+   }
+
+  .nav-menu-items{
+    width: 100%;
+  }
+  .navbar-toggle{
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  span{
+    margin-left: 14px;
+  }
+
+  /* .home,
+  .profile,
+  .signup{
+    font-size: 3rem;
+    height: 90vh;
+  } */
+
+

@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box ;
+  }
+  /* HEADER */
+  #header{
+    background-color:  rgb(21, 56, 86) ;
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    
+  }
+.adminWrapper{
+    display: flex;
+    height: 93vh;
+
+}
+.adminWrapper .side-two{
+    flex: 8;
+  }
+  .adminWrapper .side-bar{
+    flex: 2 ;
+    height: 100%;   
+    background-color: rgb(53, 108, 153);
+    
+  }
+  .adminWrapper .side-bar ul{
+    padding: 0px;
+  }
+  .adminWrapper .side-bar li{
+    margin: 0;
+  }
+  .adminWrapper .side-bar ul li .link {
+    font-size: 18px;
+    color: #fff !important;
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid  rgb(21, 56, 86);
+  }
+  .adminWrapper .side-bar ul li :hover{
+    background-color: rgb(21, 56, 86);
+  } 
+  .content{
+    margin-top: 20px;
+  }
+
+.adminWrapper .admin-content{
+    flex: 8;
+    height: 100%;
+    padding: 40px 50px 50px;
+    overflow-y: scroll;
+}
+.BTN {
+    background-color: rgb(21, 56, 86);
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+.adminWrapper .page-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+th, td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid  rgb(21, 56, 86);
+}
+.editing{
+    text-decoration: none;
+}
+.editing:hover{
+    text-decoration: underline;
+}
+.edit{
+    color: green;
+}
+.delete{
+    color: red;
+}
+.publish{
+    color: blue;
+}
+
+/* WRITE */
+
+/* .writeFormGroup{
+
+} */
+.writeImg{
+    margin-top: 25px;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.writeIcon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(21, 56, 86) ;
+}
+.writeInput{
+    font-size: 30px;
+    border: none;
+    /* padding: 20px; */
+    width: 90%;
+}
+.writeSubmit{
+    position: absolute;
+    /* margin-bottom: 50px; */
+    bottom: 20px;
+    right: 50px;
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.topic{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.topic label{
+    font-size: 28px;
+    color:rgb(21, 56, 86) ;
+    font-weight: 600;
+}
+.topic select{
+    width: 70%;
+    height: 30px;
+}
