@@ -1,0 +1,142 @@
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+    
+  }
+  a:hover {
+    color: #535bf2;
+  }
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+  button {
+    border: none;
+    padding: 0.3em 1.0em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+
+
+  
+div{
+  font-weight: 800;
+}
+.pp {
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  
+  background: linear-gradient(rgb(139, 137, 137), black);
+  border-radius: 0%;
+  padding-bottom: 8px;
+}
+
+#cover-pic {
+  margin: auto;
+  width: 70%;
+  height: 380px;
+  border-radius: 0 0 5px 5px;
+  border: solid 1px;
+}
+.modal-body {
+  justify-content: center;
+  text-align: center;
+}
+
+#edit-cover {
+  height: 200px;
+}
+
+#bio {
+  width: 70%;
+}
+
+.profile-box {
+  width: 68%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#user-name {
+  color: aliceblue;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 10px;
+}
+
+#dp {
+ width: 200px;
+ height: 200px;
+  border-radius: 50%;
+}
+
+#img2{
+  width: 180px;
+  height: 180px;
+}
+#info,#address,#education{
+  /* background-color: rgba(240, 248, 255, 0.116); */
+  border: 0.01px solid;
+}
+
+
+
+@media (max-width: 850px) {
+  #cover-pic {
+    margin: auto;
+    width: 90%;
+    height: 200px;
+    border-radius: 0 0 5px 5px;
+    border: solid 1px;
+  }
+
+  #edit-cover {
+    height: 100px;
+  }
+
+  #dp {
+    margin-top: -70px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  .profile-box {
+    width: 97%;
+   
+    margin: auto;
+    justify-content: space-between;
+  }
+  .addto{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pro{
+    border-radius: 8px;
+    border: 1px rgb(249, 249, 252) solid !important;
+    padding: 0.0px 1.0em !important;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+}
+  .pro,.addToStory,.editDp,.editCoverP {
+    background-color: rgb(13,202,240) !important;
+    font-weight: 650 !important;
+  }
+  
