@@ -1,40 +1,58 @@
 import React from "react";
-import Admin from "./ManagePost";
 import "../adminGeneral.css";
 import { useState } from "react";
+import pics from "./card1.jpg";
 
 export default function AddPost (){
+
+    
+    const [file, setFiles]= useState(pics);
+
+    function UploadImg(){
+        let file = document.getElementById('fil').files[0]
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+    
+        reader.onload = () => {
+          setFiles(reader.result)
+        }
+        reader.onerror = (err) => {
+          console.log("error has occured")
+        }
+    }
+    function PostImage() {
+        document.getElementById('fil').click()
+      }
     
     return(
         <>
         <div className="admin-content">
        
-        <div className="button-group">
+        <div className="button-group ">
             
             <a href="" className="BTN">Add Posts</a>
-            <a href="" className="BTN m-5">Manage Posts</a>
+            <a href="" className="BTN ">Manage Posts</a>
         </div>
+        
+        <main>
+            <section>
+
+        <div className="card m-5 " style={{border:"none"}} >
+         <input type="file" id="fil" onChange={UploadImg} hidden />
+          <img id="writeImg" src={pics} alt="Card image" />
+          <div className="card-img-overlay writeImg">
+            <button className="BTN" onClick={PostImage}>Post Image</button>
+          </div>
+         </div>
+            </section>
          
-        <img  className="writeImg" src="card1.jpg" alt="" />
+      
         <div className="content">
             <h2 className="page-title">Manage Posts</h2>
 
             <div className="write">
                 <form action="" className="writeForm">
                 <div className="writeFormGroup">
-                <div className="writeFormGroup">
-                    <label htmlFor="fileInput">Image </label><br />
-                    <input type="file" className="text-input" />
-                </div>
-                     {/* <div className="card " id="cover-pic" >
-                    <img id="cover-pi" className="card-img-top w-100 h-100" src={fil} alt="Card image" />
-                    <div className="card-img-overlay ">
-                        <button className="editCP" onClick={coverbtn}>Edit cover photo</button>
-                    </div>
-                    </div> */}
-
-
-                    <input type="file" className="fileInput" style={{display:"none"}} />
                     <input type="text" placeholder="Title" className="writeInput" autoFocus={true} />
                 </div>
                 <div className="writeFormGroup">
@@ -55,18 +73,13 @@ export default function AddPost (){
                 </div>
                 <button className="writeSubmit">Add Post</button>
                
-            {/* <div>
-                <label htmlFor="">Title</label>
-                <input type="text" name="title" className="text-input" />
-            </div>
-            <div>
-                <label htmlFor="">Body</label>
-                <textarea name="body" id="body"></textarea>
-            </div> */}
+         
             </form> 
             </div>
         </div>
+        </main>
         </div>
+        
         
         </>
         

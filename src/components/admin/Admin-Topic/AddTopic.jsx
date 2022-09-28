@@ -31,8 +31,9 @@ export default function AddTopic (){
             <a href="" className="BTN">Add Topic</a>
             <a href="" className="BTN m-5">Manage Topic</a>
         </div>
-         
-        <img  className="writeImg" src="card1.jpg" alt="" />
+        <main>
+              
+        <img  className="card" src="card1.jpg" alt="" />
         <div className="content">
             <h2 className="page-title">Manage Topic</h2>
 
@@ -74,6 +75,9 @@ export default function AddTopic (){
             </form> 
             </div>
         </div>
+
+        </main>
+       
         </div>
         
         </>

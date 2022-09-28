@@ -1,6 +1,7 @@
 import React from "react";
 import "../adminGeneral.css";
 import { useState } from "react";
+import pics from "./card1.jpg";
 
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -17,6 +18,25 @@ export default function AddUser (){
         return /\S+@\S+\.\S+/.test(email);
       }
 
+
+      const [file, setFiles]= useState(pics);
+
+    function UploadImg(){
+        let file = document.getElementById('fil').files[0]
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+    
+        reader.onload = () => {
+          setFiles(reader.result)
+        }
+        reader.onerror = (err) => {
+          console.log("error has occured")
+        }
+    }
+    function PostImage() {
+        document.getElementById('fil').click()
+      }
+
     return(
         <>
         <div className="admin-content">
@@ -26,7 +46,17 @@ export default function AddUser (){
             <a href="" className="BTN m-5">Manage User</a>
         </div>
          
-        <img  className="writeImg" src="card1.jpg" alt="" />
+        {/* <img  className=" card" src="card1.jpg" alt="" /> */}
+        <section>
+
+          <div className="card m-5 " style={{border:"none"}} >
+          <input type="file" id="fil" onChange={UploadImg} hidden />
+            <img id="writeImg" src={pics} alt="Card image" />
+            <div className="card-img-overlay writeImg">
+              <button className="BTN" onClick={PostImage}>Image</button>
+            </div>
+          </div>
+              </section>
         <div className="content">
             <h2 className="page-title">Manage Users</h2>
 

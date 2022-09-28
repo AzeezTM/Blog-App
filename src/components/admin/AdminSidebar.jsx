@@ -29,6 +29,7 @@ export default function AdminSidebar() {
 
     return(
         < >
+        <div className="Adminwrapper">
         <div className="side-bar container-fluid">
 
           <ul>
@@ -42,6 +43,7 @@ export default function AdminSidebar() {
                 <Link onClick={Admin} className="link"  >Manage Topics</Link>
             </li>
         </ul>
+        </div>
         </div>
         </>
     )

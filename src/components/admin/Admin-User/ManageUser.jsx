@@ -40,6 +40,7 @@ export default function ManageUser(){
                     </tr>
                     <tr>
                         <td>3</td>
+                        <td>Raymond</td>
                         <td>Tech</td>
                         <td><a href="#" className="editing edit">edit</a></td>
                         <td><a href="#" className="editing delete">delete</a></td>

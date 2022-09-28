@@ -8,15 +8,16 @@ import AddTopic from "./Admin-Topic/AddTopic";
 import ManageTopic from "./Admin-Topic/ManageTopic";
 import AdminSidebar from "./AdminSidebar";
 import AddUser from "./Admin-User/AddUser";
+import ManageUser from "./Admin-User/ManageUser"
 
 function  Adminheader() {
 
   
 
-    // const [post, setPost] = useState();
+    const [post, setPost] = useState();
 
     useState(()=>{
-        fetch("https://active-info.onrender.com/blog-post/")
+        fetch ("https://active-info.onrender.com/blog-post")
         .then(res =>{
             return res.json()
         })
@@ -38,13 +39,17 @@ function  Adminheader() {
 
         <div className="adminWrapper">
 
-        <div className="side-bar ">
+        <div className="side-bar">
         <AdminSidebar />
         </div>
 
         <div className="side-two">
-        {/* <AddUser /> */}
-        <AddPost />
+            {/* <ManagePost/> */}
+            {/* <ManageTopic/> */}
+            {/* <ManageUser/> */}
+            {/* <AddUser /> */}
+            {/* <AddTopic/> */}
+            <AddPost />
 {/* 
             <switch>
                <Routes>
