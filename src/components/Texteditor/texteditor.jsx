@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 // import {useParams} from 'react-router'
 import { Editor } from "react-draft-wysiwyg";
-import { EditorState } from 'draft-js';
+import { EditorState, convertToRaw } from 'draft-js';
+
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import draftToHtml from 'draftjs-to-html';
 
 export default class texteditor extends Component {
-
+  
     state = {
         editorState: EditorState.createEmpty(),
-    }
+    };
 
     onEditorStateChange = (editorState) => {
         this.setState({
@@ -18,6 +20,7 @@ export default class texteditor extends Component {
 
   render() {
     const {editorState} = this.state
+    // console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
     return (
       <div>
         <Editor
@@ -26,9 +29,15 @@ export default class texteditor extends Component {
             wrapperClassName="wrapperClassName"
             editorClassName="editorClassName"
             onEditorStateChange={this.onEditorStateChange}
-        />;
+        />
+
+      {/* <textarea disabled value={
+        draftToHtml(convertToRaw(editorState.getCurrentContent()))
+      }></textarea> */}
+
       </div>
-    )
+
+    );
   }
 }
 
