@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {useParams} from 'react-router'
+// import {useParams} from 'react-router'
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from 'draft-js';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";

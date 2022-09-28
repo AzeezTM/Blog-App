@@ -12,7 +12,7 @@ function App() {
    <main>
     <Topbar />
      <Signup/>
-     <Footer/>
+     {/* <Footer/> */}
      <Texteditor />
    </main>
   )
