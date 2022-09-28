@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import SinglePosts from './components/Single/SinglePosts';
 import Comments from './components/Comments/Comments';
 import Profile from './components/profile/profile';
+import Adminheader from './components/admin/Adminheader'
 
 
 
@@ -18,10 +19,11 @@ function App() {
 
   return (
    <main>
-    <Topbar />
+    {/* <Topbar /> */}
 {/* <Header/> */}
     {/* <Profile/> */}
      {/* <Signup/> */}
+     <Adminheader />
 
      {/* <Home/> */}
      {/* <SinglePosts/> */}
@@ -29,7 +31,6 @@ function App() {
    
         <Footer/>
 
-   
    </main>
   )
 }

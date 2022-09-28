@@ -15,6 +15,8 @@ import Topbar from './components/topbar/Topbar';
 import Home from './components/Home/Home';
 import Signup from './components/signup/Signup';
 import Profile from './components/profile/profile';
+import AddPost from './components/admin/Admin-post/AddPost';
+import AddTopic from './components/admin/Admin-Topic/AddTopic';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,12 @@ const router = createBrowserRouter([
     path: "/profile", element:   <Profile/>
    
   },
+  {
+    path:"/addPost", element: <AddPost />
+  },
+  {
+    path:"/addTopic", element: <AddTopic />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
