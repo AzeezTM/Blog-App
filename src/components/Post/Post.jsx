@@ -1,6 +1,6 @@
 import React from "react";
 import "./Post.css";
-
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Post() {
@@ -8,8 +8,7 @@ function Post() {
   let [selects, setSelect] = useState(true)
   console.log(selects)
 
-import { Link } from "react-router-dom";
-import Posts from "../Posts/Posts";
+
 
 function Post( {post} ) {
   // {post.map((po, index) => {
@@ -102,6 +101,6 @@ console.log(post);
      
     </div>
   );
-}
+}}
 
 export default Post;
