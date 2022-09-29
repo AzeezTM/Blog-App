@@ -9,6 +9,7 @@
 
   
   .footer {
+    overflow: hidden;
     width: 100%;
     background-color: #121315;
     color: #a7a7a7;

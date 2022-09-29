@@ -57,7 +57,7 @@ const Comment = ({
                 setActiveComment({ id: comment.id, type: "replying" })
               }
             >
-              Reply
+              Reply <span>{replies.length}</span>
             </div>
           )}
           {canEdit && (

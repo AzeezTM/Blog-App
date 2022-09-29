@@ -10,6 +10,7 @@ import {
 } from "../api";
 
 const Comments = ({ commentsUrl, currentUserId }) => {
+
   const [backendComments, setBackendComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const rootComments = backendComments.filter(
@@ -28,6 +29,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
       setActiveComment(null);
     });
   };
+  
 
   const updateComment = (text, commentId) => {
     updateCommentApi(text).then(() => {
@@ -58,14 +60,15 @@ const Comments = ({ commentsUrl, currentUserId }) => {
     });
   }, []);
 
+  
 
   return (
     <div className='comments '>
-        <h3 className="comments-title">Comments</h3>
+        <h3 className="comments-title"><span  >{backendComments.length}</span> Comments </h3>
         <div className="comments-container">
       
       </div>
-      <div className="comment-form-title">Write comment</div>
+      <div className="comment-form-title"> Write comment </div>
       <CommentForm submitLabel="Write" handleSubmit={addComment} />
       {rootComments.map((rootComment) => (
           <Comment
@@ -84,5 +87,6 @@ const Comments = ({ commentsUrl, currentUserId }) => {
     </div>
   )
 }
+
 
 export default Comments
