@@ -18,16 +18,16 @@ function App() {
 
   return (
    <main>
-    <Topbar />
+    {/* <Topbar /> */}
 {/* <Header/> */}
     {/* <Profile/> */}
      {/* <Signup/> */}
 
-     {/* <Home/> */}
+     <Home/>
      {/* <SinglePosts/> */}
     
    
-        <Footer/>
+        {/* <Footer/> */}
 
    
    </main>

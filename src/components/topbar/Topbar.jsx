@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import "./topbar.css";
 
 
@@ -11,50 +12,39 @@ function Topbar() {
            <i class="icon fa-brands fa-square-twitter"></i>
            <i class="icon fa-brands fa-pinterest"></i>
            </div> */}
-      <div className="div ">
+      <div className="div nav-pills">
         <div className="sectB">
           
-          <NavLink
-          className=" btn1 item text-light"
-                to="Tech"
-                style={({ isActive }) =>
-                  isActive ? activeStyle : undefined
-                }
+          <Link
+          className=" btn1 item text-light active"
+               
+                
               >
                 {/* <FontAwesomeIcon icon={solid('fa-bars')} /> */}
                 Tech
-              </NavLink>
+              </Link>
           
-          <nav>
-            <a className=" btn1 item text-light" href="">
+          
+            <Link className=" btn1 item text-light"  href="">
               {" "}
               Sport
-            </a>
-          </nav>
-          <nav>
-            <a href="" className=" btn1 item text-light">
+            </Link>
+          
+          
+            <Link  className=" btn1 item text-light">
               Entertainment
-            </a>
-          </nav>
-          <nav>
-            <a href="" className=" btn1 item text-light">
+            </Link>
+          
+          
+            <Link href="" className=" btn1 item text-light">
               Nature
-            </a>
-          </nav>
+            </Link>
+          
         </div>
       </div>
 
-      {/* <div className="sectC">
-
-                <a href="" className="btn item"> Sign-Up</a>
-               <a href="" className="btn item"> Login
-               <i class=" fa-solid fa-right-to-bracket"></i>
-               </a>
-               <span className="icon">
-                 <i class="item  fa-solid fa-user" ></i>
-                    Profile
-               </span>
-           </div> */}
+   
+        
     </div>
 
     //New Navbar
