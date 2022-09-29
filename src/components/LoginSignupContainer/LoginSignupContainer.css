@@ -22,6 +22,7 @@
 .login-signup-container.active{
     grid-template-columns: 0% 30% 70%;
     transition: 0.3s linear;
+    transform:translate(30px);
 }
 
 .login-signup-container .side-div{
