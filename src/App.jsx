@@ -13,24 +13,24 @@ import Profile from './components/profile/profile';
 
 
 function App() {
-  
-  
+
+
 
   return (
-   <main>
-    <Topbar />
-{/* <Header/> */}
-    {/* <Profile/> */}
-     {/* <Signup/> */}
+    <main>
+      {/* <Topbar /> */}
+      {/* <Header/> */}
+      <Profile />
+      {/* <Signup/> */}
 
-     {/* <Home/> */}
-     {/* <SinglePosts/> */}
-    
-   
-        <Footer/>
+      {/* <Home/> */}
+      {/* <SinglePosts /> */}
 
-   
-   </main>
+
+      <Footer />
+
+
+    </main>
   )
 }
 

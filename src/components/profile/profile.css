@@ -30,7 +30,7 @@ a {
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
-  div{
+  #myModal div{
     font-weight: 800;
   }
   .pp {
@@ -111,6 +111,16 @@ a {
   .editprofile, .addtostory {
     border-radius: 5px;
 
+  }
+  #accordion{
+   padding-top: 5px;
+  }
+  #pwd, #firstName , #lastName{
+    border: rgb(53, 108, 153) solid 1px;
+
+    border-top: 0;
+    border-right: 0;
+    background: rgb(255, 254, 254);
   }
   
   @media (max-width: 850px) {
