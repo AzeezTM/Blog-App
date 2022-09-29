@@ -15,16 +15,17 @@ import Topbar from './components/topbar/Topbar';
 import Home from './components/Home/Home';
 import Signup from './components/signup/Signup';
 import Profile from './components/profile/profile';
+import SinglePosts from './components/Single/SinglePosts';
 
 const router = createBrowserRouter([
   {
-    path: "/", element: <App/>,
+    path: "/", element: <App/>
   
    
   },
 
   {
-    path: "/signup", element: <Signup/>
+    path: "signup", element: <Signup/>
    
   },
   {
@@ -32,7 +33,12 @@ const router = createBrowserRouter([
    
   },
   {
-    path: "/profile", element:   <Profile/>
+    path: "profile", element:   <Profile/>
+   
+  },
+
+  {
+    path: "post/:id", element: <SinglePosts/>
    
   },
 ]);
