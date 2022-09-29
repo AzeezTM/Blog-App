@@ -30,9 +30,9 @@ a {
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
-  div{
+  /* div{
     font-weight: 800;
-  }
+  } */
   .pp {
     margin: auto;
     width: 100%;

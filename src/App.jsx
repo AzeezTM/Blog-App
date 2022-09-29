@@ -25,9 +25,9 @@ function App() {
      {/* <Signup/> */}
      <Adminheader />
 
-     {/* <Home/> */}
+     <Home/>
      {/* <SinglePosts/> */}
-    
+     {/* /post/6332dd9d2ad70efb50c096c6"  */}
    
         <Footer/>
 
