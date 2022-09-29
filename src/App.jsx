@@ -10,6 +10,7 @@ import LoginSignupContainer from './components/LoginSignupContainer/LoginSignupC
 import SinglePosts from './components/Single/SinglePosts';
 import Comments from './components/Comments/Comments';
 import Profile from './components/profile/profile';
+import Adminheader from './components/admin/Adminheader'
 
 
 
@@ -19,16 +20,14 @@ function App() {
   
 
   return (
-     
-  <NavigationBar />
+
+   <main>
+    <NavigationBar />
   <LoginSignupContainer />
-
-
     {/* <Topbar /> */}
+{/* <Header/> */}
+    {/* <Profile/> */}
      {/* <Signup/> */}
-     {/* <Home/> */}
-
-     
 
    </main>
   )
