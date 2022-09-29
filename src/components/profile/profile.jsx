@@ -6,7 +6,7 @@ import './profile.css'
 import { useEffect } from 'react'
 import Topbar from "../topbar/Topbar";
 import Footer from '../Footer/footer';
-
+import Post from '../Post/Post';
 
 function Profile() {
   const [file, setCount] = useState(reactLogo);
@@ -223,7 +223,11 @@ function Profile() {
           <div>Videos</div>
         </div>
       </div>
+
       {/* <Footer /> */}
+
+
+    
 
     </div>
   )

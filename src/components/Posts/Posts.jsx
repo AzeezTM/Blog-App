@@ -2,17 +2,16 @@ import React from 'react'
 // import "./Post.css"
 import Post from '../Post/Post'
 
-function Posts() {
+function Posts( {posts} ) {
   return (
     <div className='posts'>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+      {posts.map((pos, index)=> (
+          <Post post={pos}/>
+         
+      ))}
+    
     </div>
-  )
+  );
 }
 
 export default Posts
