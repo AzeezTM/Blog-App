@@ -17,7 +17,8 @@ import Signup from './components/signup/Signup';
 import Profile from './components/profile/profile';
 import SinglePosts from './components/Single/SinglePosts';
 import AddPost from './components/admin/Admin-post/AddPost';
-import AddTopic from './components/admin/Admin-Topic/AddTop
+// import AddTopic from './components/admin/Admin-Topic/AddTop';
+import AddTopic from './components/admin/Admin-Topic/AddTopic';
 
 const router = createBrowserRouter([
   {
