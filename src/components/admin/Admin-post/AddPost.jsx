@@ -2,31 +2,10 @@ import React from "react";
 import "../adminGeneral.css";
 import { useState } from "react";
 import pics from "./card1.jpg";
-import * as BsIcons  from "react-icons/bs";
+import * as AiIcons  from "react-icons/ai";
+import axios from "axios";
 
 export default function AddPost (){
-
-    
-   
-    // function UploadImg(){
-    //     let file = document.getElementById('fil').files[0]
-    //     let reader = new FileReader();
-    //     reader.readAsDataURL(file);
-    
-    //     reader.onload = () => {
-    //       setFiles(reader.result)
-    //     }
-    //     reader.onerror = (err) => {
-    //       console.log("error has occured")
-    //     }
-    // }
-    // function PostImage() {
-    //     document.getElementById('fil').click()
-    //   }
-
-
-
- 
 
  const [story, setStory] = useState("");
  const [file, setFile] = useState("");
@@ -38,7 +17,7 @@ export default function AddPost (){
  function handleFile(e) {
       console.log(e.target.files[0]);
       setFile(e.target.files[0])
-    //   console.log(file);
+      console.log(file);
 
  }
 
@@ -46,7 +25,7 @@ export default function AddPost (){
 
  const handlesubmit = async () => {
    const url = "https://blog-9i5d.onrender.com/upload"
-// console.log(url);
+console.log(url);
    const formData = new FormData()
 
    formData.set("image", file)
@@ -95,8 +74,8 @@ export default function AddPost (){
             <div className="write">
                 <form action="" className="writeForm" onSubmit={handlesubmit}>
                 <div className="writeFormGroup">
-                <label htmlFor="file" className="col-md-3 mb-3">
-                    <BsIcons.BsFillImageFill/>
+                <label htmlFor="file" className="licon mb-3">
+                    <AiIcons.AiOutlinePlusCircle/>
                     {/* <i className="btn btn-outline-dark  border border-0 fa-solid fa-image fs-5 ">
                       {" "}
                     </i>{" "} */}
@@ -109,24 +88,28 @@ export default function AddPost (){
                     onChange={e => handleFile(e)}
                   />
                   
-                    <input type="text" placeholder="Title" value={title}  className="writeInput form-control mb-4" autoFocus={true}  onChange={(e) => setTitle(e.target.value)}/>
-                    <input type="text" placeholder="Author" value={author}  className="writeInput form-control mb-4" autoFocus={true}  onChange={(e) => setAuthor(e.target.value)}/>
+                   
+                    {/* <input type="text" placeholder="Author" value={author}  className="writeInput form-control mb-4" autoFocus={true}  onChange={(e) => setAuthor(e.target.value)}/> */}
                 </div>
 
                 <div className="topic">
-                    <label htmlFor="">Topic</label>
+                    <label htmlFor="" className="fw-bold fs-5">Topic</label>
                     <select name="" id="" 
                     className="form-select select-div w-5"
                     aria-label="Default select example"
                     value={Categories}
                     onChange={(e) => setCategories(e.target.value)}
                     >
-                        <option selected >Categories</option>
+                       
                         <option value="tech">Tech</option>
                         <option value="entertainment">Entertainment</option>
                         <option value="sport">Sport</option>
                         <option value="nature">Nature</option>
                     </select>
+                </div>
+                <div>
+                  <label htmlFor="" className="fw-bold fs-5">Title</label>
+                  <input type="text" placeholder="Title" value={title}  className="writeInput form-control mb-4"   onChange={(e) => setTitle(e.target.value)}/>
                 </div>
 
                 <div className="writeFormGroup">
@@ -143,14 +126,14 @@ export default function AddPost (){
 
 
              
-                <button className="btn btn-outline-dark fs-5 fw-bold" type="submit">
+                {/* <button className="btn btn-outline-dark fw-bold" type="submit">
                   Post
-                </button>
+                </button> */}
               
             
 
                
-                {/* <button className="writeSubmit">Add Post</button> */}
+                <button className="btn btn-outline-info" type="submit">Add Post</button>
                
          
             </form> 
