@@ -2,46 +2,88 @@ import React from "react";
 import "../adminGeneral.css";
 import { useState } from "react";
 import pics from "./card1.jpg";
+import * as BsIcons  from "react-icons/bs";
 
 export default function AddPost (){
 
     
-    const [file, setFiles]= useState(pics);
-
-    function UploadImg(){
-        let file = document.getElementById('fil').files[0]
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
+   
+    // function UploadImg(){
+    //     let file = document.getElementById('fil').files[0]
+    //     let reader = new FileReader();
+    //     reader.readAsDataURL(file);
     
-        reader.onload = () => {
-          setFiles(reader.result)
-        }
-        reader.onerror = (err) => {
-          console.log("error has occured")
-        }
-    }
-    function PostImage() {
-        document.getElementById('fil').click()
-      }
+    //     reader.onload = () => {
+    //       setFiles(reader.result)
+    //     }
+    //     reader.onerror = (err) => {
+    //       console.log("error has occured")
+    //     }
+    // }
+    // function PostImage() {
+    //     document.getElementById('fil').click()
+    //   }
+
+
+
+ 
+
+ const [story, setStory] = useState("");
+ const [file, setFile] = useState("");
+ const [title, setTitle] = useState("");
+ const [Categories, setCategories] = useState("");
+ const [author, setAuthor] = useState("Mubarak Azeez");
+
+
+ function handleFile(e) {
+      console.log(e.target.files[0]);
+      setFile(e.target.files[0])
+    //   console.log(file);
+
+ }
+
+  
+
+ const handlesubmit = async () => {
+   const url = "https://blog-9i5d.onrender.com/upload"
+// console.log(url);
+   const formData = new FormData()
+
+   formData.set("image", file)
+   formData.set("story", story)
+   formData.set("category", Categories)
+   formData.set("title", title)
+   formData.set("author", author)
+
+   try {
+     const response = await axios.post(url, formData)
+     console.log(response.data);
+     console.log(formData);
+
+     
+   } catch (error) {
+      console.log(error);
+   }
+ }
+
     
     return(
         <>
         <div className="admin-content">
        
-        <div className="button-group ">
+        {/* <div className="button-group ">
             
             <a href="" className="BTN">Add Posts</a>
             <a href="" className="BTN ">Manage Posts</a>
-        </div>
+        </div> */}
         
         <main>
             <section>
 
         <div className="card m-5 " style={{border:"none"}} >
-         <input type="file" id="fil" onChange={UploadImg} hidden />
+        
           <img id="writeImg" src={pics} alt="Card image" />
           <div className="card-img-overlay writeImg">
-            <button className="BTN" onClick={PostImage}>Post Image</button>
           </div>
          </div>
             </section>
@@ -51,27 +93,64 @@ export default function AddPost (){
             <h2 className="page-title">Manage Posts</h2>
 
             <div className="write">
-                <form action="" className="writeForm">
+                <form action="" className="writeForm" onSubmit={handlesubmit}>
                 <div className="writeFormGroup">
-                    <input type="text" placeholder="Title" className="writeInput" autoFocus={true} />
+                <label htmlFor="file" className="col-md-3 mb-3">
+                    <BsIcons.BsFillImageFill/>
+                    {/* <i className="btn btn-outline-dark  border border-0 fa-solid fa-image fs-5 ">
+                      {" "}
+                    </i>{" "} */}
+                  </label>
+                <input
+                    type="file"
+                    id="file"
+                    accept="image/png, image/gif, image/jpeg"
+                    style={{ display: "none" }}
+                    onChange={e => handleFile(e)}
+                  />
+                  
+                    <input type="text" placeholder="Title" value={title}  className="writeInput form-control mb-4" autoFocus={true}  onChange={(e) => setTitle(e.target.value)}/>
+                    <input type="text" placeholder="Author" value={author}  className="writeInput form-control mb-4" autoFocus={true}  onChange={(e) => setAuthor(e.target.value)}/>
                 </div>
+
+                <div className="topic">
+                    <label htmlFor="">Topic</label>
+                    <select name="" id="" 
+                    className="form-select select-div w-5"
+                    aria-label="Default select example"
+                    value={Categories}
+                    onChange={(e) => setCategories(e.target.value)}
+                    >
+                        <option selected >Categories</option>
+                        <option value="tech">Tech</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="sport">Sport</option>
+                        <option value="nature">Nature</option>
+                    </select>
+                </div>
+
                 <div className="writeFormGroup">
                     <textarea 
                      placeholder="Tell your story ..." 
                     type="text" 
-                    className="writeInput writeText"
-                    ></textarea>
+                    className="writeInput writeText form-control mb-5"
+                    value={story}
+                    onChange={e => setStory(e.target.value)}
+                    >
+                 {""}
+                    </textarea>
                 </div>
-                <div className="topic">
-                    <label htmlFor="">Topic</label>
-                    <select name="" id="" >
-                        <option value="">Tech</option>
-                        <option value="">Entertainment</option>
-                        <option value="">Sport</option>
-                        <option value="">Nature</option>
-                    </select>
-                </div>
-                <button className="writeSubmit">Add Post</button>
+
+
+             
+                <button className="btn btn-outline-dark fs-5 fw-bold" type="submit">
+                  Post
+                </button>
+              
+            
+
+               
+                {/* <button className="writeSubmit">Add Post</button> */}
                
          
             </form> 

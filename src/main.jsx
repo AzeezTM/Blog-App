@@ -19,6 +19,11 @@ import SinglePosts from './components/Single/SinglePosts';
 import AddPost from './components/admin/Admin-post/AddPost';
 // import AddTopic from './components/admin/Admin-Topic/AddTop';
 import AddTopic from './components/admin/Admin-Topic/AddTopic';
+import LoginSignupContainer from './components/signup/LoginSignupContainer/LoginSignupContainer';
+import Adminheader from './components/admin/Adminheader';
+
+const user = false;
+
 
 const router = createBrowserRouter([
   {
@@ -28,7 +33,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "signup", element: <Signup/>
+    path: "signup",  element: <LoginSignupContainer/>
    
   },
   {
@@ -45,11 +50,11 @@ const router = createBrowserRouter([
    
   },
   {
-    path:"/addPost", element: <AddPost />
+    path:"/addPost", element: <Adminheader />
   },
-  {
-    path:"/addTopic", element: <AddTopic />
-  }
+  // {
+  //   path:"/addTopic", element: <AddTopic />
+  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

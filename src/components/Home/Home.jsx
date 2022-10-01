@@ -14,7 +14,7 @@ import axios from "axios";
 
 
 function Home() {
-  const BLOG_API =  "https://active-info.onrender.com";
+  const BLOG_API =   "https://blog-9i5d.onrender.com"
   const SEARCH_API = BLOG_API + "/blog-post";
 
   const [posts, setPosts] = useState([]);
@@ -22,10 +22,11 @@ function Home() {
 useEffect(() => {
     const fetchBlogs = async () => {
       const { data } = await axios.get(
+        ("https://blog-9i5d.onrender.com/blog-post")
       // ("https://active-info.onrender.com/blog-post")
-        (`${BLOG_API}/blog-post`)
+        // (`${BLOG_API}/blog-post`)
       );
-      setPosts(data.blog);
+      // setPosts(data.blog);
       console.log(data);
       // console.log(posts);
     }
