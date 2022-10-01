@@ -17,7 +17,7 @@ function  Adminheader() {
     const [post, setPost] = useState();
 
     useState(()=>{
-        fetch ("https://active-info.onrender.com/blog-post")
+        fetch ("https://blog-9i5d.onrender.com/blog-post")
         .then(res =>{
             return res.json()
         })
