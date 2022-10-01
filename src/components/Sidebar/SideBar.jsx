@@ -6,6 +6,7 @@ import { useState } from "react";
 import * as CgIcons from "react-icons/cg";
 import { IconContext } from "react-icons";
 import "./SideBar.css"
+import * as BiIcons from "react-icons/bi";
 
 function SideBar() {
 
@@ -36,6 +37,13 @@ function SideBar() {
       title: "Signup",
       path: "/signup",
       icon: < FaIcons.FaSignInAlt/>,
+      className: "nav-text"
+    },
+
+    {
+      title: "addPost",
+      path: "/addPost",
+      icon: < BiIcons.BiRepost/>,
       className: "nav-text"
     },
   ]
