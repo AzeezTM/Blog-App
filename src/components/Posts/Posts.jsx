@@ -5,10 +5,11 @@ import Post from '../Post/Post'
 function Posts( {posts} ) {
   return (
     <div className='posts'>
-      {posts.map((pos, index)=> (
+      {posts.map((pos)=> (
           <Post post={pos}/>
          
       ))}
+      <h1>{posts.title}</h1>
     
     </div>
   );
