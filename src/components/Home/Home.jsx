@@ -26,9 +26,9 @@ useEffect(() => {
       // ("https://active-info.onrender.com/blog-post")
         // (`${BLOG_API}/blog-post`)
       );
-      // setPosts(data.blog);
+      setPosts(data.blog);
       console.log(data);
-      // console.log(posts);
+      console.log(posts);
     }
   
     fetchBlogs();

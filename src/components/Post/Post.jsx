@@ -7,7 +7,7 @@ function Post() {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true)
   console.log(selects)
-
+  const [post, setPost] = useState({})
 
 
 function Post( {post} ) {
@@ -18,26 +18,24 @@ function Post( {post} ) {
   //   )
   //  })}
 
-  // const BLOG_API = "https://active-info.onrender.com";
-  // const SEARCH_API = BLOG_API + "/blog-post";
-  // const [post, setPost] = useState({})
+  const BLOG_API = "https://blog-9i5d.onrender.com";
+  const SEARCH_API = BLOG_API + "/blog-post";
+  
 
 
-  // useEffect(() => {
-  //   const showPosts = async () => {
-  //     const { data } = await axios.get(
-  //     // ("https://active-info.onrender.com/blog-post")
-  //       (`${BLOG_API}/blog-post`)
-  //     );
-  //     setPost(data.blog);
-  //    console.log(data.blog);
-  //   console.log(post);    
+  useEffect(() => {
+    const showPosts = async () => {
+      const { data } = await axios.get(
+      // ("https://active-info.onrender.com/blog-post")
+        (`${BLOG_API}/blog-post`)
+      );
+      setPost(data.blog);
+     console.log(data);
+    console.log(post);    
       
-  //   };
-  //   showPosts()
-  // }, [])
-
-console.log(post);
+    };
+    showPosts()
+  }, []);
 
 
   
