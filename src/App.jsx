@@ -14,6 +14,8 @@ import LoginSignupContainer from './components/signup/LoginSignupContainer/Login
 import Login from './components/signup/Login/Login';
 import Signup from './components/signup/signup/Signup';
 import { Routes, Route } from 'react-router';
+import Post from './components/Post/Post';
+import Posts from './components/Posts/Posts';
 
 function App() {
 
@@ -28,11 +30,13 @@ function App() {
      {/* <Signup/> */}
      {/* <Adminheader /> */}
 {/* <AddPost/> */}
-     {/* <Home/> */}
+     <Home/>
      {/* <LoginSignupContainer /> */}
      {/* <Login/> */}
      {/* <Signup/> */}
      {/* <SinglePosts/> */}
+     {/* <Post/> */}
+     <Posts/>
      {/* /post/6332dd9d2ad70efb50c096c6"  */}
 
 
