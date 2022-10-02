@@ -23,7 +23,8 @@ export default function AddPost (){
 
   
 
- const handlesubmit = async () => {
+ const handlesubmit = async (e) => {
+  e.preventDefault();
    const url = "https://blog-9i5d.onrender.com/upload"
 console.log(url);
    const formData = new FormData()

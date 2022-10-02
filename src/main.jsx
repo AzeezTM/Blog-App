@@ -4,7 +4,7 @@ import 'bootstrap';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
+  Route,Routes
 } from "react-router-dom";
 
 
@@ -52,9 +52,9 @@ const router = createBrowserRouter([
   {
     path:"/addPost", element: <Adminheader />
   },
-  // {
-  //   path:"/addTopic", element: <AddTopic />
-  // }
+  {
+    path:"/addTopic", element: <AddTopic />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
