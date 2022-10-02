@@ -2,42 +2,26 @@ import React from "react";
 import "./Post.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import * as GrIcons from "react-icons/gr";
 
-function Post() {
+
+function Post({post}) {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true)
   console.log(selects)
-  const [post, setPost] = useState({})
+  // const [post, setPost] = useState({})
 
 
-function Post( {post} ) {
-  // {post.map((po, index) => {
-  //   const {_id, image} = po
-  //   const base64String = btoa(
-  //     String.fromCharCode(...new Uint8Array(image))
-  //   )
-  //  })}
+// function Post( {post} ) {
+//   {post.map((po, index) => {
+//     const {_id, image} = po
+//     const base64String = btoa(
+//       String.fromCharCode(...new Uint8Array(image))
+//     )
+//    })}
 
-  const BLOG_API = "https://blog-9i5d.onrender.com";
-  const SEARCH_API = BLOG_API + "/blog-post";
   
-
-
-  useEffect(() => {
-    const showPosts = async () => {
-      const { data } = await axios.get(
-      // ("https://active-info.onrender.com/blog-post")
-        (`${BLOG_API}/blog-post`)
-      );
-      setPost(data.blog);
-     console.log(data);
-    console.log(post);    
-      
-    };
-    showPosts()
-  }, []);
-
-
   
   
   function addLikes(adde, param) {
@@ -69,26 +53,27 @@ function Post( {post} ) {
           <span className="posted">{new Date(post.updatedAt).toDateString()}</span>
           <p className="postdesc">
          
-            {post.story}
+           
             <Link to={`/post/${post._id}`} className="text-dark">
-      Read more
+            {post.story}
             </Link>
           </p>
           <nav className="like ">
 
             <div className="likes ">
-              <button id="changeLike" className="rounded-pill narbar">
+              <button id="changeLike" className="rounded-pill bg-light">
+              {/* <GiIcons.GrLike/> */}
                 <button onClick={eve => addLikes(eve, "❤️")}>❤️</button>
                 <button onClick={eve => addLikes(eve, "👍")}>👍</button>
                 <button onClick={eve => addLikes(eve, "😂")}>😂</button>
                 <button onClick={eve => addLikes(eve, "😘")}>😘</button>
                 <button onClick={eve => addLikes(eve, "😡")}>😡</button>
               </button>
-              <button className="likeB">{like} Like</button>
+              <button className="likeB bg-light">{like}<GrIcons.GrLike/></button>
             </div>
-            {selects == false && <strong>{like.length-1}Likes</strong>}
-            <button className="comment text-light">
-            <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-light "></a> Comment
+            {selects == false && <strong>{like.length-1} likes</strong>}
+            <button className="comment text-dark bg-light">
+            <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark"></a> Comment
 
             </button>
           </nav>
@@ -99,6 +84,6 @@ function Post( {post} ) {
      
     </div>
   );
-}}
+}
 
 export default Post;
