@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
+
 import "./Login.css"
 
 function Login() {
 
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate() 
+  
 
   const HandleLogin = async(e) => {
   e.preventDefault();
@@ -23,17 +28,22 @@ function Login() {
 
         console.log(User);
         try {
+          setLoading(true);
             // const url = "https://active-info.onrender.com/login";
             const url = "https://blog-9i5d.onrender.com/login";
             const response = await axios.post(url, User);
             console.log(response);
             console.log(response.data);
             console.log(response.data.message);
+            navigate('/')
+
         } catch (error) {
             console.log(error);
             console.log(error.response.data);
             console.log(error.response.data.message);
 
+        } finally{
+          setLoading(false);
         }
     }
 
@@ -45,7 +55,10 @@ function Login() {
        <form onSubmit={HandleLogin}>
         <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
-        <button type='submit'> Login </button>
+        <button type='submit'> 
+        <span hidden={!loading} className="spinner-border spinner-border-sm"></span>
+        <span> Login </span>
+        </button>
        </form>
     </div>
   )
