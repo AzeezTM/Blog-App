@@ -13,6 +13,7 @@ export default function AddPost() {
   const [author, setAuthor] = useState("Mubarak Azeez");
 
   function handleFile(e) {
+   
     console.log(e.target.files[0]);
     setFile(e.target.files[0]);
     console.log(file);
@@ -50,9 +51,12 @@ export default function AddPost() {
 
         <main>
           <section>
+            {/* {file && } */}
             <div className="card m-5 " style={{ border: "none" }}>
-              <img id="writeImg" src={pics} alt="Card image" />
-              <div className="card-img-overlay writeImg"></div>
+              {file && 
+              (<img id="writeImg" src={URL.createObjectURL(file)} alt="Card image" />)}
+              {/* <img id="writeImg" src={pics} alt="Card image" /> */}
+              {/* <div className="card-img-overlay writeImg"></div> */}
             </div>
           </section>
 
@@ -98,9 +102,9 @@ export default function AddPost() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="" className="fw-bold fs-5">
+                  {/* <label htmlFor="" className="fw-bold fs-5">
                     Title
-                  </label>
+                  </label> */}
                   <input
                     type="text"
                     placeholder="Title"

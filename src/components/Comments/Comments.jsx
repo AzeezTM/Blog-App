@@ -63,7 +63,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   
 
   return (
-    <div className='comments '>
+    <div className='comments bg-light '>
         <h3 className="comments-title"><span  >{backendComments.length}</span> Comments </h3>
         <div className="comments-container">
       

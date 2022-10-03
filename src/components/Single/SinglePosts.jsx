@@ -7,49 +7,43 @@ import { useLocation } from "react-router";
 import axios from "axios";
 
 function SinglePosts() {
- const {id} = useParams()
- console.log(id);
-// const location = useLocation()
-// const id = location.pathname.split("/")[2];
+//  const {id} = useParams()
+//  console.log(id);
+const location = useLocation()
+// console.log(location.pathname.split("/")[2]);
+const id = location.pathname.split("/")[2];
 
-
-
-
- const BLOG_API = "https://active-info.onrender.com";
-  const SEARCH_API = BLOG_API + "/blog-post";
+ const BLOG_API = "https://blog-9i5d.onrender.com";
   const [post, setPost] = useState({})
 
+
   useEffect(() => {
-
-    try {
-      const getPosts = async () => {
-        const { data } = await axios.get(
-        // ("https://active-info.onrender.com/blog-post")
-          (`${BLOG_API}/blog-post`)
-
-        );
+    const getPosts = async () => {
+      try {
+        
+        const { data } = await axios.get(`${BLOG_API}/blog-post`);
         setPost(data.blog);
-        console.log(data.blog[id]);
+        console.log(data);
 
-       
+      } catch (error) {
+        console.log(error)
+        
+            
       }
-    
-      getPosts();
-    } catch (error) {
-      console.log(error);
-      console.log(data.blog);
-      console.log(post);
-    }
 
-  }, []);  
+     
+    };
+    getPosts()
+  }, [id]);
 
 
 
   return (
     <div>
-      <div className="singlePosts d-flex justify-content-center">
+      {/* {post.map((value, index) =>  */}
+      <div  className="singlePosts d-flex justify-content-center">
         <div className="singlePostRapper">
-          <img src="advert.jpeg" className="singlePostImage d-flex" alt="" />
+          <img src="/advert.jpeg" className="singlePostImage d-flex" alt="" />
           <h1 className="singlePostTitle text-center">
           {post.title}
             <div className="singlePostEdit">
@@ -91,7 +85,7 @@ function SinglePosts() {
         <hr />
        
       </div>
-    
+    {/* )} */}
     </div>
   );
 }

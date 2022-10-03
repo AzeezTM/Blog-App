@@ -3,14 +3,13 @@ import "./Post.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AxiosError } from "axios"
-import { useEffect } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import * as GrIcons from "react-icons/gr";
 
 
 
-function Post({post}) {
+function Post() {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true)
   
@@ -82,7 +81,7 @@ function Post({post}) {
         <div key={index} className="post">
 
 
-          <img className="posting" src={"./card1.jpg"} alt="" />
+          <img className="posting" src={value.image} alt="" />
           <div className="postinfo">
             <div className="postcats">
 
@@ -91,14 +90,14 @@ function Post({post}) {
             </div>
             <span className="posttitle fw-bold">
 
-              {post.title}
+              {value.title}
             </span>
             <span className="posted">{new Date(value.updatedAt).toDateString()}</span>
             <p className="postdesc">
 
-              {post.story}
+             
               <Link to={`/post/${value._id}`} className="text-dark">
-                Read more
+              {value.story}
               </Link>
             </p>
             <nav id='' className="like ">
@@ -112,11 +111,11 @@ function Post({post}) {
                   <button onClick={eve => addLikes(eve, "😘")}>😘</button>
                   <button onClick={eve => addLikes(eve, "😡")}>😡</button>
                 </button>
-                <button className="likeB">{like} Like</button>
+                <button className="likeB bg-light">{like} <GrIcons.GrLike/></button>
               </div>
-              {selects == false && <strong>{like.length - 1}Likes</strong>}
-              <button className="comment text-light">
-                <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-light "></a> Comment
+              {selects == false && <strong>{like.length - 1} Like</strong>}
+              <button className="comment text-dark bg-light">
+                <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a> Comment
 
               </button>
             </nav>

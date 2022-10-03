@@ -54,7 +54,7 @@ useEffect(() => {
      
         <Posts posts={posts} />
 
-        <h1>{posts.title}</h1>
+        {/* <h1>{posts.title}</h1> */}
       </div>
     </>
   );
