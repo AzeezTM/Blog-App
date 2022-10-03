@@ -91,10 +91,11 @@ function SideBar() {
 
            
             <div className="loginDiv mt-3">
-              {/* <span className="login">Login</span> */}
-              <Link className="login">
-              Login
+              {/* <span className="logininside">Login</span> */}
+              <Link to={'/'} className="loginside">
+              TeamBlog
               </Link>
+              
             </div>
           </div>
 

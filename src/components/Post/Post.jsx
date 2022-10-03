@@ -5,12 +5,15 @@ import { useState } from "react";
 import { AxiosError } from "axios"
 import { useEffect } from "react";
 import axios from "axios";
+import { useEffect } from "react";
+import * as GrIcons from "react-icons/gr";
 
 
 
-function Post() {
+function Post({post}) {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true)
+  
   // console.log(selects)
   const [post, setPost] = useState({})
   const [loading, setLoading] = useState(true)
@@ -40,6 +43,19 @@ function Post() {
     showPosts()
   }, []);
 
+
+
+// function Post( {post} ) {
+//   {post.map((po, index) => {
+//     const {_id, image} = po
+//     const base64String = btoa(
+//       String.fromCharCode(...new Uint8Array(image))
+//     )
+//    })}
+
+  
+  
+ 
   function addLikes(adde, param) {
     // console.log(param)
     like = param;
@@ -52,6 +68,7 @@ function Post() {
   }
 
   return (
+
 
     <div className="display-post d-flex justify-content-center ">
       {loading && <div>
@@ -85,6 +102,7 @@ function Post() {
               </Link>
             </p>
             <nav id='' className="like ">
+
 
               <div className="likes ">
                 <button id="changeLike" className="rounded-pill narbar">

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import swal from 'sweetalert';
 import "./Signup.css";
 
 function Signup() {
  
+  const [loading, setLoading] = useState(false)
   let [email, setEmail] = useState("")
   let [usname, setUsname] = useState("")
   let [pwd, setPwd] = useState("")
@@ -44,6 +46,7 @@ function Signup() {
           };
         
           try {
+            setLoading(true)
             console.log("This is the user",User);
             // const url = "https://active-info.onrender.com/signup";
             const url = "https://blog-9i5d.onrender.com/signup";
@@ -52,6 +55,13 @@ function Signup() {
             console.log(response.data);
           } catch (error) {
             console.log(error);
+          } finally{
+            setLoading(false)
+            swal("Successfull!", "You can proceed to login!", "success");
+            setEmail("")
+            setUsname("")
+            setPwd("")
+            setConfirmPwd("")
           }
 
         }
@@ -66,7 +76,10 @@ function Signup() {
      <input type="text" placeholder='Username' onChange={(e) => setUsname(e.target.value)} />
      <input type="password" placeholder='Password' onChange={(e) => setPwd(e.target.value)} />
      <input type="password" placeholder='Confirm Password' onChange={(e) => setConfirmPwd(e.target.value)} />
-     <button type='submit'>Sign Up </button>
+     <button type='submit'>
+     <span hidden={!loading} className="spinner-border spinner-border-sm"></span>
+      <span>Sign Up</span>
+     </button>
     </form>
  </div>
   )

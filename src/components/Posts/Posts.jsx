@@ -13,6 +13,7 @@ function Posts() {
           <Post key={index} post={pos}/>
       )) } */}
     <Post/>
+
     </div>
   );
 }
