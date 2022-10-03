@@ -30,14 +30,14 @@ const Comment = ({
   return (
     <div key={comment.id} className="comment">
       <div className="comment-image-container">
-        <img src="/user-icon.png" />
+        <img src="/user-icon.jpg" width="30px" />
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
           <div className="comment-author">{comment.username}</div>
           <div>{createdAt}</div>
         </div>
-        {!isEditing && <div className="comment-text">{comment.body}</div>}
+        {!isEditing && <div className="comment-textbg-light">{comment.body}</div>}
         {isEditing && (
           <CommentForm
             submitLabel="Update"

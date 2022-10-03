@@ -31,7 +31,7 @@ function App() {
      {/* <Signup/> */}
      {/* <SinglePosts/> */}
      {/* <Post/> */}
-     <Posts/>
+     {/* <Posts/> */}
      {/* /post/6332dd9d2ad70efb50c096c6"  */}
 
 
