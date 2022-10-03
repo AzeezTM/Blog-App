@@ -2,15 +2,18 @@ import React from 'react'
 // import "./Post.css"
 import Post from '../Post/Post'
 
-function Posts( {posts} ) {
+function Posts() {
+  // console.log(post)
+  
   return (
     <div className='posts'>
-      {posts.map((pos)=> (
-          <Post post={pos}/>
-         
-      ))}
-      <h1>{posts.title}</h1>
-    
+      
+      {/* { post.length > 0 && post.map((pos, index)=> (
+          // console.log(pos.title),
+          <Post key={index} post={pos}/>
+      )) } */}
+    <Post/>
+
     </div>
   );
 }
