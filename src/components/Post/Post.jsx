@@ -21,6 +21,7 @@ function Post() {
   const SEARCH_API = BLOG_API + "/blog-post";
 
 
+ 
 
   useEffect(() => {
     const showPosts = async () => {
@@ -69,7 +70,7 @@ function Post() {
   return (
 
 
-    <div className="display-post d-flex justify-content-center ">
+    <div className="display-post d-flex justify-content-center not">
       {loading && <div>
         <span className="spinner-grow text-success"></span>
         <span className="spinner-grow text-warning"></span>
@@ -96,7 +97,7 @@ function Post() {
             <p className="postdesc">
 
              
-              <Link to={`/post/${value._id}`} className="text-dark">
+              <Link  to={`/post/${index}`} className="text-dark">
               {value.story}
               </Link>
             </p>
@@ -128,7 +129,7 @@ function Post() {
        !loading &&  post.length  <= 0 &&
 
         <div>
-          <h1 className="alert alert-warning p-5">No user yet</h1>
+          <h1 className="alert alert-warning p-5">pls check your internet connection</h1>
         </div>
 
       }
