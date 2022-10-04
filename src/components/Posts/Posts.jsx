@@ -8,10 +8,6 @@ function Posts() {
   return (
     <div className='posts'>
       
-      {/* { post.length > 0 && post.map((pos, index)=> (
-          // console.log(pos.title),
-          <Post key={index} post={pos}/>
-      )) } */}
     <Post/>
 
     </div>

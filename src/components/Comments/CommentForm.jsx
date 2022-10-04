@@ -19,24 +19,26 @@ const CommentForm = ({
 
   return (
     <form onSubmit={onSubmit}>
-    <textarea
-      className="comment-form-textarea form-control"
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-    />
-    <button className="comment-form-button" disabled={isTextareaDisabled}>
-      {submitLabel}
-    </button>
-    {hasCancelButton && (
-      <button
-        type="button"
-        className="comment-form-button btn btn-info comment-form-cancel-button"
-        onClick={handleCancel}
-      >
-        Cancel
-      </button>
-    )}
-  </form>
+      <div className='navbar justify-content-start'>
+        <textarea
+          className="comment-form-textarea form-control"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button className="comment-form-button mt-5 ms-2" disabled={isTextareaDisabled} >
+          {submitLabel}<i class=" singlePostIcon fa-sharp fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+      {hasCancelButton && (
+        <button
+          type="button"
+          className="comment-form-button btn btn-info comment-form-cancel-button"
+          onClick={handleCancel}
+        >
+          Cancel
+        </button>
+      )}
+    </form>
 
   );
 }
