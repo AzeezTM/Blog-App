@@ -47,7 +47,7 @@ useEffect(() => {
           </div>
 
           <h1 className="pageTitle text-center  fw-bold mt-4">
-            <i>The Ants of The Mind</i>
+            <i>The Arts of The Mind</i>
           </h1>
           <Topbar />
         </div>

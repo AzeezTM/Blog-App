@@ -41,7 +41,7 @@ function SideBar() {
     },
 
     {
-      title: "addPost",
+      title: "Add Post",
       path: "/addPost",
       icon: < BiIcons.BiRepost/>,
       className: "nav-text"
@@ -79,7 +79,6 @@ function SideBar() {
                                       {item.title}
                                     </span>
                                 </Link>
-
                               </li>
                             )
                            })}
@@ -93,7 +92,7 @@ function SideBar() {
             <div className="loginDiv mt-3">
               {/* <span className="logininside">Login</span> */}
               <Link to={'/'} className="loginside">
-              TeamBlog
+              Categories
               </Link>
               
             </div>

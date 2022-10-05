@@ -96,10 +96,10 @@ export default function AddPost() {
                     value={Categories}
                     onChange={(e) => setCategories(e.target.value)}
                   >
-                    <option value="tech">Tech</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="sport">Sport</option>
-                    <option value="nature">Nature</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Nature">Nature</option>
                   </select>
                 </div>
                 <div>
