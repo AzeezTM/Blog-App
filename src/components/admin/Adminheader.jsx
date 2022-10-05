@@ -32,7 +32,7 @@ function  Adminheader() {
         <>
         <nav className="navbar " id="header" >
         <div className="container-fluid">
-         <i >The Ants of The Mind</i>
+         <i >The Arts of The Mind</i>
           
         </div>
         </nav>
