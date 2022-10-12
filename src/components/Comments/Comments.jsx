@@ -8,7 +8,6 @@ import {
   updateComment as updateCommentApi,
   deleteComment as deleteCommentApi,
 } from "../api";
-
 const Comments = ({ commentsUrl, currentUserId }) => {
 
   const [backendComments, setBackendComments] = useState([]);
@@ -64,7 +63,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
 
   return (
     <div className='comments bg-light '>
-        <h3 className="comments-title"><span  >{backendComments.length}</span> Comments </h3>
+        <h3 className="comments-title"><span >{backendComments.length}</span> Comments </h3>
         <div className="comments-container">
       
       </div>

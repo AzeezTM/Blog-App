@@ -35,8 +35,18 @@
   text-decoration: none;
 }
 
+.sideba{
+  width: 300px;
+  /* background-color: aqua; */
+  margin: 0 5px 0 5px;
 
+}
 
-
+@media (max-width:767px) {
+  .sideba{
+    display: none;
+  
+  }
+}
 
   
