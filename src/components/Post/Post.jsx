@@ -6,7 +6,6 @@ import { AxiosError } from "axios";
 import axios from "axios";
 import { useEffect } from "react";
 import * as GrIcons from "react-icons/gr";
-
 function Post() {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true);
@@ -50,15 +49,15 @@ function Post() {
     setSelect(selects);
     console.log(selects);
   }
-  
+
 
   return (
     <div className="display-post d-flex justify-content-center">
       {loading && (
-        <div className="not">
-          <span className="spinner-grow text-success"></span>
-          <span className="spinner-grow text-warning"></span>
-          <span className="spinner-grow text-primary"></span>
+        <div className="d-flex loading-post">
+          <div className="spinner-grow text-success mx-auto"></div>
+          <div className="spinner-grow text-warning"></div>
+          <div className="spinner-grow text-primary"></div>
         </div>
       )}
 
@@ -66,6 +65,7 @@ function Post() {
         post.length > 0 &&
         post.map(
           (value, index) => {
+            let id = '633c2156a8a1eeccb3f5871c'
             const { _id, image } = value;
             const base64String = btoa(
               String.fromCharCode(...new Uint8Array(image.data.data))
@@ -78,11 +78,14 @@ function Post() {
                   alt=""
                 />
                 <div className="postinfo">
-                  <div className="postcats">
-                    <span className="postcats">{value.category}</span>
+                  <div className="post-p">
+                    <div className="postcats w-100">
+                      <span className="postcats">{value.category}</span>
+                    </div>
+
                   </div>
-                  <span className="posttitle fw-bold">{value.title}</span>
-                  <span className="posted">
+                  <span className="posttitle fw-bold w-100">{value.title}</span>
+                  <span className="posted w-100">
                     {new Date(value.updatedAt).toDateString()}
                   </span>
                   <p className="postdesc">
@@ -90,7 +93,14 @@ function Post() {
                       {value.story}
                     </Link>
                   </p>
-                  <nav id="" className="like ">
+                  {/* {selects == false && ( */}
+                  <div className="d-flex justify-content-between w-100">
+                    <strong className="w-25">{like.length - 1} Like</strong>
+                    <strong className="w-25">0 Comment</strong>
+                  </div>
+                  {/* )} */}
+
+                  <nav id="" className="like">
                     <div className="likes ">
                       <button id="changeLike" className="rounded-pill narbar">
                         <button onClick={(eve) => addLikes(eve, "❤️")}>
@@ -109,13 +119,11 @@ function Post() {
                           😡
                         </button>
                       </button>
-                      <button className="likeB bg-light">
-                        {like} <GrIcons.GrLike />
+                      <button className="likeB btn-likeB bg-light">
+                        {like}
                       </button>
                     </div>
-                    {selects == false && (
-                      <strong>{like.length - 1} Like</strong>
-                    )}
+
                     <button className="btn-comment text-dark bg-light">
                       <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
                       Comment
