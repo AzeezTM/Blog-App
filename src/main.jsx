@@ -21,6 +21,8 @@ import AddPost from './components/admin/Admin-post/AddPost';
 import AddTopic from './components/admin/Admin-Topic/AddTopic';
 import LoginSignupContainer from './components/signup/LoginSignupContainer/LoginSignupContainer';
 import Adminheader from './components/admin/Adminheader';
+// import ManageUser from './components/admin/Admin-User/ManageUser';
+import ManageTopic from './components/admin/Admin-Topic/ManageTopic';
 
 const user = false;
 
@@ -53,8 +55,11 @@ const router = createBrowserRouter([
     path:"/addPost", element: <Adminheader />
   },
   {
-    path:"/addTopic", element: <AddTopic />
-  }
+    path:"/manageuser", element: <Profile />
+  },
+  {
+    path:"/managetopic", element: <ManageTopic />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

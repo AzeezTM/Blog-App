@@ -90,7 +90,8 @@ export default function AddPost() {
                   <select
                     name=""
                     id=""
-                    className="form-select select-div w-5"
+                    className="form-select select-div w-5 h-5"
+                    style={{height:"50px"}}
                     aria-label="Default select example"
                     value={Categories}
                     onChange={(e) => setCategories(e.target.value)}
@@ -108,6 +109,7 @@ export default function AddPost() {
                   <input
                     type="text"
                     placeholder="Title"
+                    style={{fontSize: "20px", fontWeight:"bold"}}
                     value={title}
                     className="writeInput form-control mb-4"
                     onChange={(e) => setTitle(e.target.value)}
@@ -118,7 +120,8 @@ export default function AddPost() {
                   <textarea
                     placeholder="Tell your story ..."
                     type="text"
-                    className="writeInput writeText form-control mb-5"
+                    style={{height:"300px",}}
+                    className="writeInput writeText form-control mb-5 "
                     value={story}
                     onChange={(e) => setStory(e.target.value)}
                   >

@@ -9,6 +9,7 @@ import ManageTopic from "./Admin-Topic/ManageTopic";
 import AdminSidebar from "./AdminSidebar";
 import AddUser from "./Admin-User/AddUser";
 import ManageUser from "./Admin-User/ManageUser"
+import AdminSidepage from "./AdminSidepage";
 
 function  Adminheader() {
 
@@ -32,7 +33,7 @@ function  Adminheader() {
         <>
         <nav className="navbar " id="header" >
         <div className="container-fluid">
-         <i >The Ants of The Mind</i>
+         <i >The Arts of The Mind</i>
           
         </div>
         </nav>
@@ -44,23 +45,7 @@ function  Adminheader() {
         </div>
 
         <div className="side-two">
-            {/* <ManagePost/> */}
-            {/* <ManageTopic/> */}
-            {/* <ManageUser/> */}
-            {/* <AddUser /> */}
-            {/* <AddTopic/> */}
-            <AddPost />
-{/* 
-            <switch>
-               <Routes>
-               <Route path="/">
-                   <AddPost />
-                </Route>
-               <Route path="/addTopic">
-                   <AddTopic />
-                </Route>
-               </Routes>
-            </switch> */}
+            <AdminSidepage />
         </div>
 
         </div>

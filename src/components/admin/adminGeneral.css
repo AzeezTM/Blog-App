@@ -25,6 +25,7 @@
 }
 .adminWrapper .side-two{
     flex: 8;
+    overflow-x: auto;
   }
    .side-bar{
     flex: 2 ;
@@ -35,19 +36,16 @@
   .adminWrapper .side-bar ul{
     padding: 0px;
   }
-  .adminWrapper .side-bar li{
+  li{
     margin: 0;
   }
-  .adminWrapper .side-bar ul li .link {
-    font-size: 18px;
-    color: #fff !important;
-    padding: 18px;
+  li :hover{
+    background-color: rgb(21, 56, 86);
+  } 
+   ul {
     display: block;
     border-bottom: 1px solid  rgb(21, 56, 86);
   }
-  .adminWrapper .side-bar ul li :hover{
-    background-color: rgb(21, 56, 86);
-  } 
   .content{
     margin-top: 20px;
   }
@@ -200,4 +198,16 @@ th, td{
 
 .licon{
   font-size: 50px;
+}
+
+/*Adminsidebar */
+.text{
+  text-decoration: none;
+  color: white;
+  background-color: none;
+}
+.activeText{
+  text-decoration: none;
+  color: white;
+  background-color: red;
 }
