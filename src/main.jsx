@@ -21,6 +21,8 @@ import AddPost from './components/admin/Admin-post/AddPost';
 import AddTopic from './components/admin/Admin-Topic/AddTopic';
 import LoginSignupContainer from './components/signup/LoginSignupContainer/LoginSignupContainer';
 import Adminheader from './components/admin/Adminheader';
+import { ContextProvider } from './Context/Contex';
+import { Suspense } from 'react';
 
 const user = false;
 
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "signup",  element: <LoginSignupContainer/>
+    path: "signup",  element: user ? <Home/> : <LoginSignupContainer/>
    
   },
   {
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
    
   },
   {
-    path: "profile", element:   <Profile/>
+    path: "profile", element: user ?  <Profile/> : <LoginSignupContainer/>
    
   },
 
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
    
   },
   {
-    path:"/addPost", element: <Adminheader />
+    path:"/addPost", element: user ? <Adminheader /> : <LoginSignupContainer/>
   },
   {
     path:"/addTopic", element: <AddTopic />
@@ -60,7 +62,12 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextProvider>
+      <Suspense>
+      <RouterProvider router={router} />
+      </Suspense>
+    </ContextProvider>
+  
   </React.StrictMode>
   
 )

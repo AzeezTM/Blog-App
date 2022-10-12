@@ -12,8 +12,8 @@
     width:100%;
     /* height: 70px; */
     /* position:sticky; */
-    background-color: rgb(53, 108, 153);
-    
+    /* background-color: rgb(53, 108, 153); */
+    background: linear-gradient(to bottom, rgb(53, 108, 153) 40%,rgb(144, 197, 215)  100%);
     font-size: 8px;
     font-weight:200px;
     font-family:" josefin Sans", sans-serif ;

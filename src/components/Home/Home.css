@@ -1,7 +1,7 @@
 .posterNav {
   /* min-width: 100%; */
   min-height: 55vh;
-  background-color: rgb(53, 108, 153);
+  background: linear-gradient(to bottom, rgb(53, 108, 153) 50%,lightblue  100%);
 }
 
 
