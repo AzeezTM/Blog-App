@@ -120,7 +120,8 @@ export default function AddPost() {
                   <textarea
                     placeholder="Tell your story ..."
                     type="text"
-                    className="writeInput writeText form-control mb-5"
+                    style={{height:"300px",}}
+                    className="writeInput writeText form-control mb-5 "
                     value={story}
                     onChange={(e) => setStory(e.target.value)}
                   >
