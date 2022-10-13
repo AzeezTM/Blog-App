@@ -1,7 +1,7 @@
 
 import "./App.css";
 
-import Topbar from "./components/topbar/Topbar";
+// import Topbar from "./components/topbar/Topbar";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import SinglePosts from "./components/Single/SinglePosts";

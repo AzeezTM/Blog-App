@@ -52,7 +52,8 @@ const router = createBrowserRouter([
    
   },
   {
-    path:"/addPost", element: user ? <Adminheader /> : <LoginSignupContainer/>
+    path:"/addPost", element: user ?  <Adminheader /> :  <LoginSignupContainer/>
+   
   },
   {
     path:"/addTopic", element: <AddTopic />

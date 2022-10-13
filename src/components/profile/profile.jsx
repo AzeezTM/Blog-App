@@ -4,7 +4,7 @@ import cameraLogo from './camera.png'
 import reactLog from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
 import './profile.css'
 import { useEffect } from 'react'
-import Topbar from "../topbar/Topbar";
+// import Topbar from "../topbar/Topbar";
 import Footer from '../Footer/footer';
 import Post from '../Post/Post';
 
