@@ -19,10 +19,10 @@ function LoginSignupContainer() {
     }
  
   return (
-    <div className='login-signup-container mb-5' ref={loginSignupContainerRef}>
-        <Login /> 
+    <div className='login-signup-container mb-5 bg-danger' ref={loginSignupContainerRef}>
+        <Login className="" /> 
           <div className="side-div">
-            <button onClick={handleClick}> {login ? "SignUp" : "Login"} </button>
+            <button className='nav-button' onClick={handleClick}> {login ? "SignUp" : "Login"} </button>
           </div>
 
         <Signup />

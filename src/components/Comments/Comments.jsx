@@ -28,7 +28,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
       setActiveComment(null);
     });
   };
-  
+
 
   const updateComment = (text, commentId) => {
     updateCommentApi(text).then(() => {
@@ -59,30 +59,30 @@ const Comments = ({ commentsUrl, currentUserId }) => {
     });
   }, []);
 
-  
+
 
   return (
     <div className='comments bg-light '>
-        <h3 className="comments-title"><span >{backendComments.length}</span> Comments </h3>
-        <div className="comments-container">
-      
+      <h3 className="comments-title"><span >{backendComments.length}</span> Comments </h3>
+      <div className="comments-container">
+
       </div>
       <div className="comment-form-title"> Write comment </div>
       <CommentForm submitLabel="Write" handleSubmit={addComment} />
       {rootComments.map((rootComment) => (
-          <Comment
-            key={rootComment.id}
-            comment={rootComment}
-            replies={getReplies(rootComment.id)}
-            activeComment={activeComment}
-            setActiveComment={setActiveComment}
-            addComment={addComment}
-            deleteComment={deleteComment}
-            updateComment={updateComment}
-            currentUserId={currentUserId}
-          />
-        ))}
-        
+        <Comment
+          key={rootComment.id}
+          comment={rootComment}
+          replies={getReplies(rootComment.id)}
+          activeComment={activeComment}
+          setActiveComment={setActiveComment}
+          addComment={addComment}
+          deleteComment={deleteComment}
+          updateComment={updateComment}
+          currentUserId={currentUserId}
+        />
+      ))}
+
     </div>
   )
 }
