@@ -1,7 +1,7 @@
 .posterNav {
   /* min-width: 100%; */
   min-height: 55vh;
-  background-color: rgb(53, 108, 153);
+  background: linear-gradient(to bottom, rgb(53, 108, 153) 50%,lightblue  100%);
 }
 
 
@@ -37,7 +37,6 @@
 
 .sideba{
   width: 300px;
-  /* background-color: aqua; */
   margin: 0 5px 0 5px;
 
 }
@@ -45,7 +44,15 @@
 @media (max-width:767px) {
   .sideba{
     display: none;
+    margin: 0;
   
+  }
+  .mainDi{
+    width: 200px;
+  }
+  .posterNav {
+    min-height: 45vh;
+    background: linear-gradient(to bottom, rgb(53, 108, 153) 50%,lightblue  100%);
   }
 }
 
