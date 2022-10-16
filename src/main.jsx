@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import 'bootstrap';
 import {
@@ -21,19 +21,19 @@ import AddPost from './components/admin/Admin-post/AddPost';
 import AddTopic from './components/admin/Admin-Topic/AddTopic';
 import LoginSignupContainer from './components/signup/LoginSignupContainer/LoginSignupContainer';
 import Adminheader from './components/admin/Adminheader';
-import { ContextProvider } from './Context/Contex';
-import { Suspense } from 'react';
+import { Context, ContextProvider } from './Context/Contex';
 
-const user = false;
+
+
+// const {user} = useContext(Context)
+const user = false
 
 
 const router = createBrowserRouter([
-  {
-    path: "/", element: <App/>
   
-   
-  },
-
+  {
+    path: "/", element: <App/>,
+    children: [
   {
     path: "signup",  element: user ? <Home/> : <LoginSignupContainer/>
    
@@ -55,18 +55,21 @@ const router = createBrowserRouter([
     path:"/addPost", element: user ?  <Adminheader /> :  <LoginSignupContainer/>
    
   },
-  {
-    path:"/addTopic", element: <AddTopic />
-  }
+],
+  
+   
+},
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
     <ContextProvider>
-      <Suspense>
+      
       <RouterProvider router={router} />
-      </Suspense>
+      
     </ContextProvider>
   
   </React.StrictMode>

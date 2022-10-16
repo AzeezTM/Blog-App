@@ -1,20 +1,20 @@
 const Reducer = (state, action) => {
-    switch(action, type){
-        case "LOGIN_START" :
+    switch (action.type){
+        case "LOGIN_START":
             return{
                 user: null,
                 isFetching: true,
-                error: false
+                error: false,
             };
 
-            case "LOGIN_SUCCESSFUL" :
+            case "LOGIN_SUCCESSFUL":
                 return{
                     user: action.payload,
                     isFetching: false,
-                    error: false
+                    error: false,
                 };
 
-                case "LOGIN_FAILURE" :
+                case "LOGIN_FAILURE":
                     return{
                         user: null,
                         isFetching: false,

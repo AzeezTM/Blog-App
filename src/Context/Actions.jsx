@@ -1,5 +1,5 @@
 export const LoginStart = (userCredentials) => ({
-    type: "LOGIN_START"
+    type: "LOGIN_START",
 })
 
 export const LoginSuccessful = (user) => ({
