@@ -118,3 +118,10 @@
     /* color: rgb(53, 108, 153); */
 }
 
+@media (max-width: 767px) {
+
+    .post{
+      width: 100%;
+             
+    }
+  }

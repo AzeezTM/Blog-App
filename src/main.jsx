@@ -6,10 +6,7 @@ import {
   RouterProvider,
   Route,Routes
 } from "react-router-dom";
-
-
 import App from './App'
-
 import './index.css'
 import Topbar from './components/topbar/Topbar';
 import Home from './components/Home/Home';
@@ -55,11 +52,6 @@ const router = createBrowserRouter([
     path:"/addPost", element: <Adminheader />
    
   },
-],
-  
-   
-},
-
 
 ]);
 

@@ -17,6 +17,7 @@ function SinglePosts() {
 
   const { id } = useParams();
   const [loadin, setLoadin] = useState(true);
+
   useEffect(() => {
     // console.log(id)
     const getPosts = async () => {
@@ -30,15 +31,19 @@ function SinglePosts() {
         console.log(post);
         // console.log(data.blog[`${id}`]);
       } catch (error) {
+        const data = 0
+        setPost(data);
         console.log(error);
-        console.log("wahala");
-        // setLoadin(false)
+        setLoadin(false)
       } finally {
         setLoadin(false);
       }
     };
     getPosts();
+
+    
   }, [id]);
+  
 
 
   // const handleDelete = async () => {
@@ -104,11 +109,9 @@ function SinglePosts() {
                 />
               </div>
               <hr />
-              {!loadin && post.length < 0 && (
+              {!loadin && post.length <= 0 && (
                 <div>
-                  <h1 className=" text-danger p-5">
-                    pls check your internet connection
-                  </h1>
+                  <h1 className="alert alert-info p-2 ">Check your internet connection...📡</h1>
                 </div>
               )}
             </div>

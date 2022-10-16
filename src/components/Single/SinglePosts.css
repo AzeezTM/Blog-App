@@ -1,7 +1,8 @@
-/* .singlePosts{
-    width: 800px;
-
-} */
+.singlePosts{
+    width: 700px;
+margin: auto;
+justify-content: center;
+}
 
 /* .singlePostImage{
     min-width: 50%;

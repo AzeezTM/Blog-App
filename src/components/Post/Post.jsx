@@ -6,11 +6,16 @@ import { AxiosError } from "axios";
 import axios from "axios";
 import { useEffect } from "react";
 import * as GrIcons from "react-icons/gr";
+import blogimg from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
+
+import {getComments as getCommentsApi,} from "../api";
+
 function Post() {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true);
+  const [backendComments, setBackendComments] = useState([]);
 
-  // console.log(selects)
+
   const [post, setPost] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -24,22 +29,22 @@ function Post() {
         setPost(data.blog);
         console.log(data);
       } catch (error) {
+        const data = 0
+        setPost(data);
         console.log(error);
         setLoading(false);
+        
+
       } finally {
         setLoading(false);
       }
     };
     showPosts();
-  }, []);
 
-  // function Post( {post} ) {
-  //   {post.map((po, index) => {
-  //     const {_id, image} = po
-  //     const base64String = btoa(
-  //       String.fromCharCode(...new Uint8Array(image))
-  //     )
-  //    })}
+    getCommentsApi().then((data) => {
+      setBackendComments(data);
+    });
+  }, []);
 
   function addLikes(adde, param) {
     // console.log(param)
@@ -54,10 +59,17 @@ function Post() {
   return (
     <div className="display-post d-flex justify-content-center">
       {loading && (
-        <div className="d-flex loading-post">
-          <div className="spinner-grow text-success mx-auto"></div>
-          <div className="spinner-grow text-warning"></div>
-          <div className="spinner-grow text-primary"></div>
+        <div className="d-flex loading-post d-block w-100 justify-content-center bg-danker">
+          <div className="d-flex loading-post w-50">
+            <div className="spinner-grow m-3 text-success "></div>
+            <div className="spinner-grow m-3 text-warning"></div>
+            <div className="spinner-grow m-3 text-primary"></div>
+          </div>
+          <div className="d-flex loading-post w-50">
+            <div className="spinner-grow m-3 text-success "></div>
+            <div className="spinner-grow m-3 text-warning"></div>
+            <div className="spinner-grow m-3 text-primary"></div>
+          </div>
         </div>
       )}
 
@@ -71,9 +83,10 @@ function Post() {
               String.fromCharCode(...new Uint8Array(image.data.data))
             );
             return (
-              <div key={index} className="post">
+              <div key={index} className="post bg-white">
                 <img
                   className="posting"
+                  // src={blogimg}
                   src={`data:image/png;base64,${base64String}`}
                   alt=""
                 />
@@ -95,8 +108,8 @@ function Post() {
                   </p>
                   {/* {selects == false && ( */}
                   <div className="d-flex justify-content-between w-100">
-                    <strong className="w-25">{like.length - 1} Like</strong>
-                    <strong className="w-25">0 Comment</strong>
+                    <strong className="">{like.length -2} Like</strong>
+                    <strong className=""><span>{backendComments.length}</span> Comment</strong>
                   </div>
                   {/* )} */}
 
@@ -133,15 +146,15 @@ function Post() {
               </div>
             );
           }
-          // {
-          //  !loading &&  post.length  <= 0 &&
-
-          //   <div>
-          //     <h1 className="alert alert-warning p-5">pls check your internet connection</h1>
-          //   </div>
-
-          // }
         )}
+      {
+        !loading && post <= 0 &&
+        <div>
+          <h1 className="alert alert-info p-2 ">Check your internet connection...📡</h1>
+        </div>
+
+      }
+
     </div>
   );
 }
