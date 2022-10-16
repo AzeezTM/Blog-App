@@ -77,7 +77,7 @@ function Post() {
         post.length > 0 &&
         post.map(
           (value, index) => {
-            let id = '633c2156a8a1eeccb3f5871c'
+            // let id = '633c2156a8a1eeccb3f5871c'
             const { _id, image } = value;
             const base64String = btoa(
               String.fromCharCode(...new Uint8Array(image.data.data))

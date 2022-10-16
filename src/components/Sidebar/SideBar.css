@@ -94,6 +94,18 @@
   color: white;
 }
 
+.logoutside{
+  text-decoration: none;
+  color: white;
+}
+
+.logoutside:hover{
+  color: white;
+}
+
 .icon:hover{
+  color: white;
+}
+.icon{
   color: white;
 }

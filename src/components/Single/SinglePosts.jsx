@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
+import { FaIcons } from "react-icons/fa";
+import { FiIcons } from "react-icons/fi";
 
 function SinglePosts() {
   const location = useLocation();
@@ -43,6 +45,15 @@ function SinglePosts() {
   }, [id]);
   
 
+
+  // const handleDelete = async () => {
+  //   try {
+  //     await axios.delete()
+  //   } catch (error) {
+      
+  //   }
+  // }
+
   return (
     <div>
       {loadin && (
@@ -73,8 +84,11 @@ function SinglePosts() {
                 <h1 className="singlePostTitle text-center">
                   {value.title}
                   <div className="singlePostEdit">
-                    <i className="singlePostIcon fa-sharp fa-solid fa-pen-to-square"></i>
-                    <i className="singlePostIcon fa-solid fa-trash"></i>
+        
+                  <div className="singlePostIcon">
+                  <FiIcons.FiEdit/>
+                    <FaIcons.FaRegTrashAlt/>
+                  </div>
                   </div>
                 </h1>
                 <div className="singlePostInfo">
