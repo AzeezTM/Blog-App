@@ -26,7 +26,7 @@ import { Context, ContextProvider } from './Context/Contex';
 
 
 // const {user} = useContext(Context)
-const user = false
+// const user = false
 
 
 const router = createBrowserRouter([
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     path: "/", element: <App/>,
     children: [
   {
-    path: "signup",  element: user ? <Home/> : <LoginSignupContainer/>
+    path: "signup",  element: <LoginSignupContainer/>
    
   },
   {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
    
   },
   {
-    path: "profile", element: user ?  <Profile/> : <LoginSignupContainer/>
+    path: "profile", element: <Profile/>
    
   },
 
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
    
   },
   {
-    path:"/addPost", element: user ?  <Adminheader /> :  <LoginSignupContainer/>
+    path:"/addPost", element: <Adminheader />
    
   },
 ],

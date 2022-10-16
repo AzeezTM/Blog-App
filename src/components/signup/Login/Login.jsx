@@ -71,11 +71,14 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { Context } from "../../../Context/Contex";
 import { useContext } from "react";
+import { Navigate } from "react-router-dom";
 
 import "./Login.css";
 
 function Login() {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
+
 
   const userRef = useRef();
   const passwordRef = useRef();
@@ -112,6 +115,7 @@ function Login() {
 
       console.log(response.data);
       console.log(response.data.message);
+       navigate('/')
 
     } catch (error) {
       console.log(error);

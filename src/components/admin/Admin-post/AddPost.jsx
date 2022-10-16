@@ -4,13 +4,16 @@ import { useState } from "react";
 import pics from "./card1.jpg";
 import * as AiIcons from "react-icons/ai";
 import axios from "axios";
+import { Context } from "../../../Context/Contex";
+import { useContext } from "react";
 
 export default function AddPost() {
   const [story, setStory] = useState("");
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
   const [Categories, setCategories] = useState("");
-  const [author, setAuthor] = useState("Mubarak Azeez");
+  const { user } = useContext(Context)
+  const [author, setAuthor] = useState("Tunji Mubarak Azeez");
 
   function handleFile(e) {
    
@@ -21,7 +24,18 @@ export default function AddPost() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
+    // const newPost = {
+    //   username: user.username,
+    //   title,
+    //   story
+    // }
+
+
+
+
+
     const url = "https://blog-9i5d.onrender.com/upload";
+    // const url2 = "https://blog-9i5d.onrender.com/blog-post";
     console.log(url);
     const formData = new FormData();
 
@@ -38,6 +52,16 @@ export default function AddPost() {
     } catch (error) {
       console.log(error);
     }
+
+    // try {
+    //   const response = await axios.post(url2, newPost);
+    //   window.location.replace("/blog-post/" + response.data._id);
+      
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+
   };
 
   return (

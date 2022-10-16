@@ -7,10 +7,14 @@ import * as CgIcons from "react-icons/cg";
 import { IconContext } from "react-icons";
 import "./SideBar.css"
 import * as BiIcons from "react-icons/bi";
+import { Context } from "../../Context/Contex";
+import { useContext } from "react";
+
 
 function SideBar() {
 
     const [sidebar, setSideBar] = useState(false);
+    const { user, dispatch } = useContext(Context)
 
   const showSidebar = () => setSideBar(!sidebar)
 
@@ -26,17 +30,30 @@ function SideBar() {
   
   
     {
+      title: "Signup",
+      path: "/signup",
+      icon: < FaIcons.FaSignInAlt/>,
+      className: "nav-text"
+    },
+
+  ]
+
+
+
+  const SideBarDataIn = [
+    {
+      title: "Home",
+      path: "/",
+      icon: <AiIcons.AiFillHome/>,
+      className: "nav-text"
+    },
+  
+  
+    {
 
       title: "Profile",
       path: "/profile",
       icon: <CgIcons.CgProfile/>,
-      className: "nav-text"
-    },
-  
-    {
-      title: "Signup",
-      path: "/signup",
-      icon: < FaIcons.FaSignInAlt/>,
       className: "nav-text"
     },
 
@@ -47,6 +64,10 @@ function SideBar() {
       className: "nav-text"
     },
   ]
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT"});
+  }
 
 
   return (
@@ -70,7 +91,8 @@ function SideBar() {
                             </Link>
 
                            </li>
-                           {SideBarData.map((item, index) => {
+                           {user ? (
+                           SideBarDataIn.map((item, index) => {
                             return(
                               <li key={index} className={item.className}>
                                 <Link to={item.path}>
@@ -81,7 +103,24 @@ function SideBar() {
                                 </Link>
                               </li>
                             )
-                           })}
+                           })
+
+                           ) : (
+                            SideBarData.map((item, index) => {
+                              return(
+                                <li key={index} className={item.className}>
+                                  <Link to={item.path}>
+                                      {item.icon}
+                                      <span>
+                                        {item.title}
+                                      </span>
+                                  </Link>
+                                </li>
+                              )
+                             })
+  
+                          
+                           )}
                      </ul>
               </nav>
               {/* </IconContext.Provider> */}
@@ -91,9 +130,17 @@ function SideBar() {
            
             <div className="loginDiv mt-3">
               {/* <span className="logininside">Login</span> */}
-              <Link to={'/'} className="loginside">
+
+              {user ? (
+                 <Link className="logoutside" onClick={handleLogout}>
+                 {"Logout"}
+                 </Link>
+                 
+              ) : (<Link to={'signup'} className="loginside">
               Login
               </Link>
+             ) }
+              
               
             </div>
           </div>
