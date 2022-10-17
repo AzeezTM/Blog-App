@@ -4,7 +4,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { useState } from "react";
 import * as CgIcons from "react-icons/cg";
-import { IconContext } from "react-icons";
+import * as IoIcons from "react-icons/io";
 import "./SideBar.css";
 import * as BiIcons from "react-icons/bi";
 import { Context } from "../../Context/Contex";
@@ -30,6 +30,13 @@ function SideBar() {
       icon: <FaIcons.FaSignInAlt />,
       className: "nav-text",
     },
+
+    {
+      title: "Contact",
+      // path: "/profile",
+      icon: <IoIcons.IoMdContact />,
+      className: "nav-text",
+    },
   ];
 
   const SideBarDataIn = [
@@ -51,6 +58,13 @@ function SideBar() {
       title: "Add Post",
       path: "/addPost",
       icon: <BiIcons.BiRepost />,
+      className: "nav-text",
+    },
+
+    {
+      title: "Contact",
+      // path: "/profile",
+      icon: <IoIcons.IoMdContact />,
       className: "nav-text",
     },
 

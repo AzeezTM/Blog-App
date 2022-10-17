@@ -35,7 +35,7 @@ function SinglePosts() {
         let main = data.blog[`${id}`];
         post.push(main);
         setPost(post);
-        console.log(post);
+        console.log(data);
         // console.log(data.blog[`${id}`]);
       } catch (error) {
         // const data = 0
@@ -55,12 +55,14 @@ function SinglePosts() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${AL_PI}/${AL_PI._id}`, {
-        data: {username: user.username},
-      });
-      window.location.replace("/")
+      const { data } = await axios.get(`${BLOG_API}/blog-post`);
+     console.log(post[id]);
+    //  data.blog[`${id}`],{
+    //   data: { username: user.username },
+    // }
+    // window.location.replace("/");
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
@@ -91,10 +93,10 @@ function SinglePosts() {
       {!loadin &&
         post.length > 0 &&
         post.map((value, index) => {
-          const { _id, image } = value;
-          const base64String = btoa(
-            String.fromCharCode(...new Uint8Array(image.data))
-          );
+          // const { _id, image } = value;
+          // const base64String = btoa(
+          //   String.fromCharCode(...new Uint8Array(image.data))
+          // );
           return (
             <div
               key={index}
@@ -102,12 +104,13 @@ function SinglePosts() {
             >
               <div className="singlePostRapper">
                 <img
-                  src={`data:image/png;base64,${base64String}`}
+                  // src={`data:image/png;base64,${base64String}`}
                   className="singlePostImage d-flex"
                   alt=""
                 />
                 <h1 className="singlePostTitle text-center">
                   {value.title}
+                 
                   <div className="singlePostEdit">
         
                   <div className="singlePostIcon">
@@ -115,6 +118,7 @@ function SinglePosts() {
                     <FaIcons.FaRegTrashAlt onClick={handleDelete}/>
                   </div>
                   </div>
+                  
                 </h1>
                 <div className="singlePostInfo">
                   <span className="singlePostAuthor">

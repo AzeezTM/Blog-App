@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-end;
     position: relative;
-    top: -150px;
+    top: -130px;
     flex-wrap: wrap;
 
 
@@ -91,13 +91,12 @@
     padding: 5px 3px 5px 3px;
 }
 
-.likeB {
-    /* width: 100px;
+/* .likeB {
+    width: 100px;
     border: rgb(228, 226, 226) solid;
-    border-radius: 5px; */
-
-    /* border: none; */
-}
+    border-radius: 5px;
+    border: none;
+}  */
 
 .likes:hover #changeLike {
     display: block;
@@ -112,6 +111,7 @@
 .btn-comment{
     border: rgb(228, 226, 226) solid;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .postcats{
