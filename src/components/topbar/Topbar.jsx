@@ -61,9 +61,7 @@ function Topbar() {
         </div>
       </div>
 
-      <div className="container-fluid mx-end">
-      <button type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" class="btn btn-outline-info dropdown-toggle">Categories</button>
-      </div> */}
+   
 
     </div>
 
