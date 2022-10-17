@@ -5,15 +5,22 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
-import { FaIcons } from "react-icons/fa";
-import { FiIcons } from "react-icons/fi";
+import * as FaIcons from "react-icons/fa";
+import { Context } from "../../Context/Contex";
+import * as FiIcons from "react-icons/fi";
+import { useContext } from "react";
 
 function SinglePosts() {
   const location = useLocation();
   // const id = location.pathname.split("/")[2];
+  const {user} = useContext(Context)
 
   const BLOG_API = "https://blog-9i5d.onrender.com";
+  // const AL_PI =  "https://blog-9i5d.onrender.com/blog-post"
   const [post, setPost] = useState([]);
+  // const [story, setStory] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [updateMode, setupdateMode] = useState(false);
 
   const { id } = useParams();
   const [loadin, setLoadin] = useState(true);
@@ -31,10 +38,10 @@ function SinglePosts() {
         console.log(post);
         // console.log(data.blog[`${id}`]);
       } catch (error) {
-        const data = 0
-        setPost(data);
-        console.log(error);
-        setLoadin(false)
+        // const data = 0
+        // setPost(data);
+        // console.log(error);
+        // setLoadin(false)
       } finally {
         setLoadin(false);
       }
@@ -46,13 +53,31 @@ function SinglePosts() {
   
 
 
-  // const handleDelete = async () => {
-  //   try {
-  //     await axios.delete()
-  //   } catch (error) {
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`${AL_PI}/${AL_PI._id}`, {
+        data: {username: user.username},
+      });
+      window.location.replace("/")
+    } catch (error) {
       
-  //   }
-  // }
+    }
+  }
+
+
+  const handleUpdate = async () => {
+    try {
+      await axios.put(`${AL_PI}/${AL_PI._id}`, {
+        username: user.username,
+        title,
+        story,
+       
+      });
+      setupdateMode(false)
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <div>
@@ -68,7 +93,7 @@ function SinglePosts() {
         post.map((value, index) => {
           const { _id, image } = value;
           const base64String = btoa(
-            String.fromCharCode(...new Uint8Array(image.data.data))
+            String.fromCharCode(...new Uint8Array(image.data))
           );
           return (
             <div
@@ -86,8 +111,8 @@ function SinglePosts() {
                   <div className="singlePostEdit">
         
                   <div className="singlePostIcon">
-                  <FiIcons.FiEdit/>
-                    <FaIcons.FaRegTrashAlt/>
+                  <FiIcons.FiEdit onClick={() => setupdateMode(true)}/>
+                    <FaIcons.FaRegTrashAlt onClick={handleDelete}/>
                   </div>
                   </div>
                 </h1>
@@ -103,10 +128,12 @@ function SinglePosts() {
                 <p className="singlePostDesc">{value.story}</p>
                 <br />
                 <hr />
+                {user ? 
                 <Comments
                   commentsUrl="http://127.0.0.1:5173/"
                   currentUserId="1"
-                />
+                />:
+                  null} 
               </div>
               <hr />
               {!loadin && post.length <= 0 && (

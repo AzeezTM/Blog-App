@@ -1,18 +1,21 @@
-/* *{
+*{
     margin:0;
     padding: 0;
 }
 .topbar{
     top:0;
+    /* background-color:#fff; */
     display:flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
     width:100%;
-   
+    /* height: 70px; */
+    /* position:sticky; */
+    /* background-color: rgb(53, 108, 153); */
     background: linear-gradient(to bottom, rgb(53, 108, 153) 40%,rgb(144, 197, 215)  100%);
     font-size: 8px;
-    font-weight:200px;
+    /* font-weight:400px; */
     font-family:" josefin Sans", sans-serif ;
 }
 .sectA,.sectC{
@@ -28,13 +31,24 @@
 .item{
     
     text-decoration: none;
+    
+    
+    
 
+    /* align-items: flex-start; */
 }
 
 .sectB{
+    /* flex:3;
+    margin-right:20px; */
+    /* justify-content:space-between; */
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    font-weight: bolder;
+    
+    
 }
 
 .icon{
@@ -45,6 +59,7 @@
 }
 
 a{
+   
     text-decoration:none;
 }
 .btn{
@@ -53,17 +68,19 @@ a{
     color:#fff;
     border-radius: 5px;
     font-size:20px;
+
+
 }
-.mx-end{
-    justify-content: end;
-    text-align: end;
-    margin-right: auto;
+.btn:hover{
+    padding: 15px;
+    background-color:rgb(241, 213, 128);
+    
 }
 .btn1{
     color:black;
     font-size: 20px;
     font-weight:400;
-} */
+}
 
 
  /* .navm{
