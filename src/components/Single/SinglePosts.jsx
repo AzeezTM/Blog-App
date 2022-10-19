@@ -55,12 +55,12 @@ function SinglePosts() {
 
   const handleDelete = async () => {
     try {
-      const { data } = await axios.get(`${BLOG_API}/blog-post`);
-     console.log(post[id]);
-    //  data.blog[`${id}`],{
-    //   data: { username: user.username },
-    // }
-    // window.location.replace("/");
+      await axios.delete(`${BLOG_API}/blog-post/${post[_id]}`,
+     
+      {
+       data: { username: user.username },
+     });
+     window.location.replace("/");
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +69,7 @@ function SinglePosts() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`${AL_PI}/${AL_PI._id}`, {
+      await axios.put(`${BLOG_API}/blog-post/${post[_id]}`, {
         username: user.username,
         title,
         story,
@@ -80,6 +80,8 @@ function SinglePosts() {
       
     }
   }
+
+  // console.log(user.user.username);
 
   return (
     <div>
@@ -93,10 +95,13 @@ function SinglePosts() {
       {!loadin &&
         post.length > 0 &&
         post.map((value, index) => {
-          // const { _id, image } = value;
-          // const base64String = btoa(
-          //   String.fromCharCode(...new Uint8Array(image.data))
-          // );
+          console.log(value.author);
+          console.log(value.category);
+          
+           const { _id, image } = value;
+           const base64String = btoa(
+             String.fromCharCode(...new Uint8Array(image.data.data))
+           );
           return (
             <div
               key={index}
@@ -104,12 +109,13 @@ function SinglePosts() {
             >
               <div className="singlePostRapper">
                 <img
-                  // src={`data:image/png;base64,${base64String}`}
+                  src={`data:image/png;base64,${base64String}`}
                   className="singlePostImage d-flex"
                   alt=""
                 />
                 <h1 className="singlePostTitle text-center">
                   {value.title}
+                  
                  
                   <div className="singlePostEdit">
         

@@ -7,13 +7,16 @@ import axios from "axios";
 import { Context } from "../../../Context/Contex";
 import { useContext } from "react";
 
+
 export default function AddPost() {
+  
+
   const [story, setStory] = useState("");
   const [file, setFile] = useState("");
   const [title, setTitle] = useState("");
   const [Categories, setCategories] = useState("");
   const { user } = useContext(Context);
-  const [author, setAuthor] = useState("Tunji Mubarak Azeez");
+  const [author, setAuthor] = useState(user.user.username);
 
   function handleFile(e) {
     console.log(e.target.files[0]);
@@ -23,6 +26,10 @@ export default function AddPost() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
+    setFile("")
+    setTitle("")
+    setCategories("")
+    setStory("")
 
     const url = "https://blog-9i5d.onrender.com/upload";
     console.log(url);
@@ -42,6 +49,11 @@ export default function AddPost() {
       console.log(error);
     }
   };
+
+  console.log(user.user.username);
+  console.log(author);
+
+  console.log(Categories);
 
   return (
     <>
@@ -86,7 +98,7 @@ export default function AddPost() {
                     id=""
                     className="form-select select-div w-5 h-5"
                     style={{ height: "50px" }}
-                    aria-label="Default select example"
+                    // aria-label="Default select example"
                     value={Categories}
                     onChange={(e) => setCategories(e.target.value)}
                   >
