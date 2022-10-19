@@ -4,7 +4,7 @@ import 'bootstrap';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,Routes
+  Route,Routes, Outlet
 } from "react-router-dom";
 import App from './App'
 import './index.css'
@@ -50,6 +50,14 @@ const router = createBrowserRouter([
   },
   {
     path:"/addPost", element: <Adminheader />
+   
+  },
+  {
+    path:"/manageuser", element: <Profile />
+   
+  },
+  {
+    path:"/managetopic", element: <ManageTopic />
    
   },
 

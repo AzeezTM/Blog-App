@@ -1,6 +1,9 @@
 import React from "react";
 import "./adminGeneral.css"
 import { Link } from "react-router-dom";
+import * as BsIcons from "react-icons/bs";
+import * as CgIcons from "react-icons/cg";
+import * as MdIcons from "react-icons/md";
 
 export default function AdminSidebar() {
   const activeLink = "activeText"
@@ -10,18 +13,25 @@ export default function AdminSidebar() {
     {
         title: "Manage Post",
         path: "/",
+        icon: <BsIcons.BsFillFileEarmarkPostFill />
         
     },
     {
         title: "Manage Users",
         path: "/manageuser",
+        icon: <CgIcons.CgProfile />
+    },
+    {
+        title: "Manage Topics",
+        path: "/managetopic",
+        icon: <MdIcons.MdTopic />
 
     },
     // {
     //     title: "Manage Topics",
     //     path: "/managetopic",
 
-    // }
+    // },
 ]
 
     return(
@@ -42,7 +52,7 @@ export default function AdminSidebar() {
                                             style={{paddingLeft:"10px", color:"white", fontSize:"18px"}}
                                             className={({isActive})=>
                                             isActive ? activeLink : normalLink
-                                            }>
+                                            }> {item.icon}
                                                 <span>{item.title}</span>
                                             </Link>
                                         </li>
@@ -59,53 +69,3 @@ export default function AdminSidebar() {
     )
 }
 
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// export default function AdminSidebar() {
-    
-//     const Admin = [
-//         {
-//           title: "Manage Posts",
-//           path: "/",
-//         //   icon: <AiIcons.AiFillHome/>,
-//           className: "link"
-//         },
-      
-      
-//         {
-//           title: "Manage Users",
-//           path: "/addUser",
-//         //   icon: <CgIcons.CgProfile/>,
-//           className: "link"
-//         },
-      
-//         {
-//           title: "Manage Topics",
-//           path: "/addTopic",
-//         //   icon: < FaIcons.FaSignInAlt/>,
-//           className: "link"
-//         },
-//       ];
-
-//     return(
-//         < >
-//         <div className="Adminwrapper">
-//         <div className="side-bar container-fluid">
-
-//           <ul>
-//             <li>
-//                 <Link onClick={Admin} className="link" to="#" >Manage Posts</Link>
-//             </li>
-//             <li>
-//                 <Link onClick={Admin} className="link" >Manage Users</Link>
-//             </li>
-//             <li>
-//                 <Link onClick={Admin} className="link"  >Manage Topics</Link>
-//             </li>
-//         </ul>
-//         </div>
-//         </div>
-//         </>
-//     )
-// }
