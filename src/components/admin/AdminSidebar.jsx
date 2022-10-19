@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import * as CgIcons from "react-icons/cg";
 import * as MdIcons from "react-icons/md";
+import * as GrIcons from "react-icons/gr";
+import * as SiIcons from "react-icons/Si";
+import * as FcIcons from "react-icons/fc";
 
 export default function AdminSidebar() {
   const activeLink = "activeText"
@@ -27,11 +30,35 @@ export default function AdminSidebar() {
         icon: <MdIcons.MdTopic />
 
     },
-    // {
-    //     title: "Manage Topics",
-    //     path: "/managetopic",
+    {
+        title: "Contact",
+        path: "/managetopic",
+        icon: <GrIcons.GrContact />
+    },
+    {
+        title: "Events",
+        path: "/managetopic",
+        icon: <SiIcons.SiEventstore />
 
-    // },
+    },
+    {
+        title: "About",
+        path: "/managetopic",
+        icon: <FcIcons.FcAbout />
+
+    },
+    {
+        title: "Services",
+        path: "/managetopic",
+        icon: <GrIcons.GrServices />
+
+    },
+    {
+        title: "Overview",
+        path: "/managetopic",
+        icon: <GrIcons.GrOverview />
+
+    },
 ]
 
     return(

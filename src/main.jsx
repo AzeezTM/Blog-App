@@ -57,7 +57,7 @@ const router = createBrowserRouter([
    
   },
   {
-    path:"/managetopic", element: <ManageTopic />
+    path:"/managetopic", element: <Outlet />
    
   },
 
