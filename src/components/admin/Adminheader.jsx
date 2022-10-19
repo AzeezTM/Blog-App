@@ -10,6 +10,7 @@ import AdminSidebar from "./AdminSidebar";
 import AddUser from "./Admin-User/AddUser";
 import ManageUser from "./Admin-User/ManageUser"
 import AdminSidepage from "./AdminSidepage";
+import * as GiIcons from "react-icons/gi";
 
 function  Adminheader() {
 
@@ -34,6 +35,7 @@ function  Adminheader() {
         <nav className="navbar " id="header" >
         <div className="container-fluid">
          <i >The Arts of The Mind</i>
+         <GiIcons.GiHeartOrgan />
           
         </div>
         </nav>
