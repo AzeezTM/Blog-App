@@ -9,12 +9,14 @@ import * as GrIcons from "react-icons/gr";
 import blogimg from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
 
 import {getComments as getCommentsApi,} from "../api";
+import { Context } from "../../Context/Contex";
+import { useContext } from "react";
 
 function Post() {
   let [like, setLike] = useState("🤍");
   let [selects, setSelect] = useState(true);
   const [backendComments, setBackendComments] = useState([]);
-
+ const {user} = useContext(Context)
 
   const [post, setPost] = useState({});
   const [loading, setLoading] = useState(true);
@@ -78,16 +80,16 @@ function Post() {
         post.map(
           (value, index) => {
             // let id = '633c2156a8a1eeccb3f5871c'
-            const { _id, image } = value;
-            const base64String = btoa(
-              String.fromCharCode(...new Uint8Array(image.data.data))
-            );
+            // const { _id, image } = value;
+            // const base64String = btoa(
+            //   String.fromCharCode(...new Uint8Array(image.data.data))
+            // );
             return (
               <div key={index} className="post bg-white">
                 <img
                   className="posting"
                   // src={blogimg}
-                  src={`data:image/png;base64,${base64String}`}
+                  // src={`data:image/png;base64,${base64String}`}
                   alt=""
                 />
                 <div className="postinfo">
@@ -136,11 +138,20 @@ function Post() {
                         {like}
                       </button>
                     </div>
+                    {user ? 
+                     <Link to={`/post/${index}`} className="btn-comment text-dark bg-light">
+                     <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
+                     Comment
+                   </Link>
 
-                    <button className="btn-comment text-dark bg-light">
+
+                   :
+
+                    <Link to={"signup"} className="btn-comment text-dark bg-light">
                       <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
                       Comment
-                    </button>
+                    </Link>
+          }
                   </nav>
                 </div>
               </div>

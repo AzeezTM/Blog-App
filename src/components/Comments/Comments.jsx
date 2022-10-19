@@ -62,7 +62,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
 
 
   return (
-    <div className='comments bg-light '>
+    <div className='comments '>
       <h3 className="comments-title"><span >{backendComments.length}</span> Comments </h3>
       <div className="comments-container">
 
@@ -80,6 +80,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
           deleteComment={deleteComment}
           updateComment={updateComment}
           currentUserId={currentUserId}
+          className="bg-light"
         />
       ))}
 

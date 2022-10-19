@@ -35,7 +35,7 @@ function SinglePosts() {
         let main = data.blog[`${id}`];
         post.push(main);
         setPost(post);
-        console.log(post);
+        console.log(data);
         // console.log(data.blog[`${id}`]);
       } catch (error) {
         // const data = 0
@@ -55,19 +55,21 @@ function SinglePosts() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${AL_PI}/${AL_PI._id}`, {
-        data: {username: user.username},
-      });
-      window.location.replace("/")
+      await axios.delete(`${BLOG_API}/blog-post/${post[_id]}`,
+     
+      {
+       data: { username: user.username },
+     });
+     window.location.replace("/");
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`${AL_PI}/${AL_PI._id}`, {
+      await axios.put(`${BLOG_API}/blog-post/${post[_id]}`, {
         username: user.username,
         title,
         story,
@@ -78,6 +80,8 @@ function SinglePosts() {
       
     }
   }
+
+  // console.log(user.user.username);
 
   return (
     <div>
@@ -91,10 +95,13 @@ function SinglePosts() {
       {!loadin &&
         post.length > 0 &&
         post.map((value, index) => {
-          const { _id, image } = value;
-          const base64String = btoa(
-            String.fromCharCode(...new Uint8Array(image.data))
-          );
+          console.log(value.author);
+          console.log(value.category);
+          
+           const { _id, image } = value;
+           const base64String = btoa(
+             String.fromCharCode(...new Uint8Array(image.data.data))
+           );
           return (
             <div
               key={index}
@@ -108,6 +115,8 @@ function SinglePosts() {
                 />
                 <h1 className="singlePostTitle text-center">
                   {value.title}
+                  
+                 
                   <div className="singlePostEdit">
         
                   <div className="singlePostIcon">
@@ -115,6 +124,7 @@ function SinglePosts() {
                     <FaIcons.FaRegTrashAlt onClick={handleDelete}/>
                   </div>
                   </div>
+                  
                 </h1>
                 <div className="singlePostInfo">
                   <span className="singlePostAuthor">

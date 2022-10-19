@@ -114,6 +114,7 @@
 }
 .icon{
   color: white;
+  /* margin: 5px; */
 }
 
 .topImage{
@@ -123,5 +124,5 @@
   object-fit: cover;
   cursor: pointer;
   margin: 5px;
+  
 }
-
