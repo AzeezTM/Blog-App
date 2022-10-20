@@ -80,16 +80,16 @@ function Post() {
         post.map(
           (value, index) => {
             // let id = '633c2156a8a1eeccb3f5871c'
-            // const { _id, image } = value;
-            // const base64String = btoa(
-            //   String.fromCharCode(...new Uint8Array(image.data.data))
-            // );
+            const { _id, image } = value;
+            const base64String = btoa(
+              String.fromCharCode(...new Uint8Array(image.data.data))
+            );
             return (
               <div key={index} className="post bg-white">
                 <img
                   className="posting"
                   // src={blogimg}
-                  // src={`data:image/png;base64,${base64String}`}
+                  src={`data:image/png;base64,${base64String}`}
                   alt=""
                 />
                 <div className="postinfo">
