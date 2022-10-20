@@ -65,7 +65,7 @@ export default function AddPost() {
 
             <div className="write">
               <form action="" className="writeForm" onSubmit={handlesubmit}>
-                <div className="writeFormGroup">
+                <div  className="writeFormGroup">
                   <label htmlFor="file" className="licon mb-3">
                     <AiIcons.AiOutlinePlusCircle />
                     {/* <i className="btn btn-outline-dark  border border-0 fa-solid fa-image fs-5 ">
@@ -107,6 +107,7 @@ export default function AddPost() {
                     Title
                   </label> */}
                   <input
+                  required
                     type="text"
                     placeholder="Title"
                     style={{fontSize: "20px", fontWeight:"bold"}}
@@ -118,6 +119,7 @@ export default function AddPost() {
 
                 <div className="writeFormGroup">
                   <textarea
+                  required
                     placeholder="Tell your story ..."
                     type="text"
                     style={{height:"300px",}}

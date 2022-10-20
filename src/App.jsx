@@ -25,6 +25,7 @@ function App() {
      {/* <Signup/> */}
      {/* <Adminheader /> */}
 {/* <AddPost/> */}
+    {/* <AddPost/> */}
      <Home/>
      {/* <LoginSignupContainer /> */}
      {/* <Login/> */}
