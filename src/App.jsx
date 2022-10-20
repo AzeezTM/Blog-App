@@ -22,10 +22,9 @@ function App() {
  
   return (
 
-   <main>
-    
+   <main>    
      <Outlet/>
-    
+    main
         <Footer/>
 
    </main>

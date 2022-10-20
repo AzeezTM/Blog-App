@@ -76,7 +76,7 @@ export default function AddPost() {
 
             <div className="write">
               <form action="" className="writeForm" onSubmit={handlesubmit}>
-                <div className="writeFormGroup">
+                <div  className="writeFormGroup">
                   <label htmlFor="file" className="licon mb-3">
                     <AiIcons.AiOutlinePlusCircle />
                   </label>
@@ -110,6 +110,7 @@ export default function AddPost() {
                 </div>
                 <div>
                   <input
+                  required
                     type="text"
                     placeholder="Title"
                     style={{ fontSize: "20px", fontWeight: "bold" }}
@@ -121,6 +122,7 @@ export default function AddPost() {
 
                 <div className="writeFormGroup">
                   <textarea
+                  required
                     placeholder="Tell your story ..."
                     type="text"
                     style={{ height: "300px" }}

@@ -1,4 +1,6 @@
+import * as GrIcons from "react-icons/gr";
 
+import blogimg from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
 import { Link } from "react-router-dom";
 import "./topbar.css";
 import { useState } from "react";
@@ -29,7 +31,9 @@ function Topbar() {
       }
     };
     showPosts();
+
   }, []);
+
 
 
   const filterBlog = (cate) => {
@@ -38,122 +42,44 @@ function Topbar() {
 
 }
 
-  return (
 
-    <div className="topbar">
-     
-      <div className="div nav-pills">
-        <div className="sectB">
-
-                    <Link className="btn1 item text-light"
-                    onClick={() => setPost(cat)}>All</Link>
-                    <Link className="btn1 item text-light"
-                     onClick={() => filterBlog("tech")}>Tech</Link>
-                    <Link className="btn1 item text-light"
-                     onClick={() => filterBlog("sport")}>Sport</Link>
-                    <Link className="btn1 item text-light"
-                     onClick={() => filterBlog("entertainment")}>Entertainment</Link>
-                    <Link className="btn1 item text-light"
-                     onClick={() => filterBlog ("nature")}>Nature</Link>
-                
           
 
+
+  return (
+    <div className=" ">
+      <div className="topbar">
+
+        <div className=" div nav-pills">
+          <div className="sectB">
+            <button className="btn item text-light"
+              onClick={eve => searchItems(eve, "all")}>All</button>
+            <button className="btn item text-light"
+              onClick={eve => searchItems(eve, "tech")}>Tech</button>
+            <button className="btn item text-light"
+              onClick={eve => searchItems(eve, "sport")}>Sport</button>
+            <button className="btn item text-light"
+              onClick={eve => searchItems(eve, "entertainment")}>Entertainment</button>
+            <button className="btn item text-light"
+              onClick={eve => searchItems(eve, "nature")}>Nature</button>
+
+          </div>
         </div>
       </div>
-
-   
+      <div className="d-flex p-3 kkk">
+        <div className="sideba" >
+          <div className="">{searchInput.length > 0 && filteredResults.length == 0 &&
+                <h3>No {searchInput} found</h3> 
+          }
+          </div>
+        </div>
 
     </div>
 
 
   
 
-    //New Navbar
 
-    // //  <div className="navm">
-    // /* <nav className="navbar navbar-expand-lg bg-light">
-    //   <div className="container-fluid">
-    //     <a className="navbar-brand text-info" href="#">
-    //       BlogApp
-    //     </a>
-    //     <button
-    //       className="navbar-toggler"
-    //       type="button"
-    //       data-bs-toggle="collapse"
-    //       data-bs-target="#navbarSupportedContent"
-    //       aria-controls="navbarSupportedContent"
-    //       aria-expanded="false"
-    //       aria-label="Toggle navigation"
-    //     >
-    //       <span className="navbar-toggler-icon"></span>
-    //     </button>
-    //     <div className="collapse navbar-collapse d-flex justify-content-space-between" id="navbarSupportedContent">
-    //       <div className="tu">
-    //       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-    //         <li className="nav-item">
-    //           <a className="nav-link active" aria-current="page" href="#">
-    //             Home
-    //           </a>
-    //         </li>
-    //         <li className="nav-item">
-    //           <a className="nav-link" href="#">
-    //             About
-    //           </a>
-    //         </li>
-    //         <li className="nav-item">
-    //           <a className="nav-link" href="#">
-    //             contact
-    //           </a>
-    //         </li>
-    //         <li className="nav-item dropdown">
-    //           <a
-    //             className="nav-link dropdown-toggle"
-    //             href="#"
-    //             role="button"
-    //             data-bs-toggle="dropdown"
-    //             aria-expanded="false"
-    //           >
-    //             Blog Posts
-    //           </a>
-    //           <ul className="dropdown-menu">
-    //             <li>
-    //               <a className="dropdown-item" href="#">
-    //                 Politics
-    //               </a>
-    //             </li>
-    //             <li>
-    //               <a className="dropdown-item" href="#">
-    //                 Sports
-    //               </a>
-    //             </li>
-    //             <li>
-    //               <hr className="dropdown-divider" />
-    //             </li>
-    //             <li>
-    //               <a className="dropdown-item" href="#">
-    //                 Nature
-    //               </a>
-    //             </li>
-    //           </ul>
-    //         </li>
-    //         <li className="nav-item">
-    //       <a className="nav-link disabled">Disabled</a>
-    //     </li>
-    //       </ul>
-    //       </div>
-
-    //       <div className="buttons">
-    //         <button to="/login" className=" btn btn-light">
-    //           <i className="fa-solid fa-right-to-bracket"></i> Login
-    //         </button>
-
-    //         <button to="/signup" className="btn btn-light ms-2">
-    //           <i className="fa-solid fa-user-plus"></i> Sign Up
-    //         </button>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </nav> */
 
   );
 }
