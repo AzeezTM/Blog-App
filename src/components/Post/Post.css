@@ -3,9 +3,9 @@
     align-items: flex-end;
     position: relative;
     top: -130px;
+
     flex-wrap: wrap;
-
-
+    
 }
 .loading-post{
     width: 100%;
@@ -20,6 +20,7 @@
     margin: 0px 0px 40px 0px;
     border: 0.1px solid rgb(184, 184, 184);
     border-radius: 5px;
+    
 }
 
 .posted {

@@ -49,8 +49,7 @@ const router = createBrowserRouter([
    
   },
   {
-    path:"/addPost", element: <Adminheader />
-   
+
   },
 
 ]}
