@@ -15,6 +15,11 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setEmail("")
+    setUsname("")
+    setPwd("")
+    setConfirmPwd("")
+    setPassword("")
 
     let checkemail = email.trim();
     let username = usname.trim();

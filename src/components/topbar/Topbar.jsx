@@ -5,72 +5,45 @@ import { Link } from "react-router-dom";
 import "./topbar.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
-import { Card, Input } from 'semantic-ui-react'
-// import ".Post/post.css";
-import { getComments as getCommentsApi, } from "../api";
 
 
 function Topbar() {
-  const [APIData, setAPIData] = useState([])
-  const [filteredResults, setFilteredResults] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
 
-  const [loading, setLoading] = useState(true);
+  const [cat, setCat] = useState([]);
+  
 
 
-  let [like, setLike] = useState("🤍");
-  let [selects, setSelect] = useState(true);
-  const [backendComments, setBackendComments] = useState([]);
 
-
+  const BLOG_API = "https://blog-9i5d.onrender.com";
 
   useEffect(() => {
     const showPosts = async () => {
       try {
-        // setLoading(true);
-        const { data } = await axios.get(`https://blog-9i5d.onrender.com/blog-post`);
-        setAPIData(data.blog);
+        setLoading(true);
+        const { data } = await axios.get(`${BLOG_API}/blog-post`);
+        setCat(data.blog);
         console.log(data);
       } catch (error) {
-        const data = 0
-        setPost(data);
         console.log(error);
         setLoading(false);
-
       } finally {
         setLoading(false);
       }
     };
     showPosts();
-    getCommentsApi().then((data) => {
-      setBackendComments(data);
-    });
+
   }, []);
 
-  function addLikes(adde, param) {
-    like = param;
-    setLike(like);
-    selects = false;
-    setSelect(selects);
-    console.log(selects);
-  }
 
 
-  const searchItems = (pa,searchValue) => {
-    setSearchInput(searchValue)
-    if (searchInput !== 'all') {
-        const filteredData = APIData.filter((item) => {
-            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
-        })
-        setFilteredResults(filteredData)
-    }
-    else{
-        setFilteredResults(APIData)
-    }
+  const filterBlog = (cate) => {
+    const updateList = cat.filter((x) =>x.category === cate);
+    setPost(updateList);
+
 }
 
 
+          
 
 
   return (
@@ -101,187 +74,14 @@ function Topbar() {
           </div>
         </div>
 
-
-        <Card.Group className="" itemsPerRow={3} style={{ marginTop: 20 }}>
-          {loading && (
-            <div className="d-flex loading-post d-block w-100 display-post bg-danker">
-              <div className="d-flex loading-post w-50">
-                <div className="spinner-grow m-3 text-success "></div>
-                <div className="spinner-grow m-3 text-warning"></div>
-                <div className="spinner-grow m-3 text-primary"></div>
-              </div>
-              <div className="d-flex loading-post w-50">
-                <div className="spinner-grow m-3 text-success "></div>
-                <div className="spinner-grow m-3 text-warning"></div>
-                <div className="spinner-grow m-3 text-primary"></div>
-              </div>
-            </div>
-          )}
-           
-          {
-            searchInput.length > 0 ? (
-              filteredResults.map((value, index) => {
-                let id = '633c2156a8a1eeccb3f5871c'
-                const { _id, image } = value;
-                const base64String = btoa(
-                  String.fromCharCode(...new Uint8Array(image.data.data))
-                );  
-                return (
-                  
-                  <div key={index} className="post bg-white">
-                    <img
-                      className="posting"
-                      // src={blogimg}
-                      src={`data:image/png;base64,${base64String}`}
-                      alt=""
-                    />
-                    <div className="postinfo">
-                      <div className="post-p">
-                        <div className="postcats w-100">
-                          <span className="postcats">{value.category}</span>
-                        </div>
-
-                      </div>
-                      <span className="posttitle fw-bold w-100">{value.title}</span>
-                      <span className="posted w-100">
-                        {new Date(value.updatedAt).toDateString()}
-                      </span>
-                      <p className="postdesc">
-                        <Link to={`/post/${index}`} className="text-dark">
-                          {value.story}
-                        </Link>
-                      </p>
-                      {selects == false && (
-                        <div className="d-flex justify-content-between w-100">
-                          <strong className="">{like.length - 2} Like</strong>
-                          <strong className=""><span>{backendComments.length}</span> Comment</strong>
-                        </div>
-                      )}
-
-                      <nav id="" className="like">
-                        <div className="likes ">
-                          <button id="changeLike" className="rounded-pill narbar">
-                            <button onClick={(eve) => addLikes(eve, "❤️")}>
-                              ❤️
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "👍")}>
-                              👍
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "😂")}>
-                              😂
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "😘")}>
-                              😘
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "😡")}>
-                              😡
-                            </button>
-                          </button>
-                          <button className="likeB btn-likeB bg-light">
-                            {like}
-                          </button>
-                        </div>
-
-                        <button className="btn-comment text-dark bg-light">
-                          <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
-                          Comment
-                        </button>
-                      </nav>
-                    </div>
-                  </div>
-                )
-                
-              }
-              
-              )
-              
-            ) : (
-              APIData.map((value, index) => {
-                let id = '633c2156a8a1eeccb3f5871c'
-                const { _id, image } = value;
-                const base64String = btoa(
-                  String.fromCharCode(...new Uint8Array(image.data.data))
-                );  
-                return (
-                  <div key={index} className="post bg-white">
-                    <img
-                      className="posting"
-                      // src={blogimg}
-                      src={`data:image/png;base64,${base64String}`}
-                      alt=""
-                    />
-                    <div className="postinfo">
-                      <div className="post-p">
-                        <div className="postcats w-100">
-                          <span className="postcats">{value.category}</span>
-                        </div>
-
-                      </div>
-                      <span className="posttitle fw-bold w-100">{value.title}</span>
-                      <span className="posted w-100">
-                        {new Date(value.updatedAt).toDateString()}
-                      </span>
-                      <p className="postdesc">
-                        <Link to={`/post/${index}`} className="text-dark">
-                          {value.story}
-                        </Link>
-                      </p>
-                      {/* {selects == false && ( */}
-                      <div className="d-flex justify-content-between w-100">
-                        <strong className="">{like.length - 2} Like</strong>
-                        <strong className=""><span>{backendComments.length}</span> Comment</strong>
-                      </div>
-                      {/* )} */}
-
-                      <nav id="" className="like">
-                        <div className="likes ">
-                          <button id="changeLike" className="rounded-pill narbar">
-                            <button onClick={(eve) => addLikes(eve, "❤️")}>
-                              ❤️
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "👍")}>
-                              👍
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "😂")}>
-                              😂
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "😘")}>
-                              😘
-                            </button>
-                            <button onClick={(eve) => addLikes(eve, "😡")}>
-                              😡
-                            </button>
-                          </button>
-                          <button className="likeB btn-likeB bg-light">
-                            {like}
-                          </button>
-                        </div>
-
-                        <button className="btn-comment text-dark bg-light">
-                          <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
-                          Comment
-                        </button>
-                      </nav>
-                    </div>
-                  </div>
-                )
-              })
-            )
-          }
-         
-          {
-            !loading && APIData <= 0 &&
-            <div>
-              <h1 className="alert alert-info p-2 ">Check your internet connection...📡</h1>
-            </div>
-
-          }
-        </Card.Group>
-        <div className="sideba" ></div>
-      </div>
     </div>
+
+
+  
+
+
 
   );
 }
-// export {filteredResults}
+
 export default Topbar;

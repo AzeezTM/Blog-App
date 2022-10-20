@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './react.svg'
+import reactLogo from './user-icon.jpg'
 import cameraLogo from './camera.png'
 import reactLog from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
 import './profile.css'

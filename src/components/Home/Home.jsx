@@ -14,7 +14,9 @@ import axios from "axios";
 
 
 function Home() {
+
  
+
   return (
     <>
       <div className="posterPag">
