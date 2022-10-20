@@ -140,7 +140,7 @@ function Login() {
     <div className='login '>
        <h1>Login</h1>
        <form onSubmit={handleLogin}>
-        <input type="text" placeholder='Username' ref={emailRef} />
+        <input type="email" placeholder='Username' ref={emailRef} />
         <input type="password" placeholder='Password' ref={passwordRef} />
         <button type='submit'> 
         <span hidden={!loading} className="spinner-border spinner-border-sm"></span>
