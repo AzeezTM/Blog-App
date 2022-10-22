@@ -1,4 +1,6 @@
+
 export const getComments = async () => {
+  
     return [
       {
         id: "1",
@@ -41,7 +43,7 @@ export const getComments = async () => {
       body: text,
       parentId,
       userId: "1",
-      username: "Mubarak",
+      username: "Olumide",
       createdAt: new Date().toISOString(),
     };
   };
