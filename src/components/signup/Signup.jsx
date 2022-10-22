@@ -21,6 +21,8 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFirstName("")
+    setEmail("")
 
     if (!lastName || !firstName || !email || !isValidEmail(e.target.value)) {
       setFlag(true);

@@ -5,13 +5,22 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
+import * as FaIcons from "react-icons/fa";
+import { Context } from "../../Context/Contex";
+import * as FiIcons from "react-icons/fi";
+import { useContext } from "react";
 
 function SinglePosts() {
   const location = useLocation();
   // const id = location.pathname.split("/")[2];
+  const {user} = useContext(Context)
 
   const BLOG_API = "https://blog-9i5d.onrender.com";
+  // const AL_PI =  "https://blog-9i5d.onrender.com/blog-post"
   const [post, setPost] = useState([]);
+  // const [story, setStory] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [updateMode, setupdateMode] = useState(false);
 
   const { id } = useParams();
   const [loadin, setLoadin] = useState(true);
@@ -26,13 +35,13 @@ function SinglePosts() {
         let main = data.blog[`${id}`];
         post.push(main);
         setPost(post);
-        console.log(post);
+        console.log(data);
         // console.log(data.blog[`${id}`]);
       } catch (error) {
-        const data = 0
-        setPost(data);
-        console.log(error);
-        setLoadin(false)
+        // const data = 0
+        // setPost(data);
+        // console.log(error);
+        // setLoadin(false)
       } finally {
         setLoadin(false);
       }
@@ -42,6 +51,37 @@ function SinglePosts() {
     
   }, [id]);
   
+
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`${BLOG_API}/blog-post/${post[_id]}`,
+     
+      {
+       data: { username: user.username },
+     });
+     window.location.replace("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  const handleUpdate = async () => {
+    try {
+      await axios.put(`${BLOG_API}/blog-post/${post[_id]}`, {
+        username: user.username,
+        title,
+        story,
+       
+      });
+      setupdateMode(false)
+    } catch (error) {
+      
+    }
+  }
+
+  // console.log(user.user.username);
 
   return (
     <div>
@@ -55,10 +95,13 @@ function SinglePosts() {
       {!loadin &&
         post.length > 0 &&
         post.map((value, index) => {
-          const { _id, image } = value;
-          const base64String = btoa(
-            String.fromCharCode(...new Uint8Array(image.data.data))
-          );
+          console.log(value.author);
+          console.log(value.category);
+          
+           const { _id, image } = value;
+           const base64String = btoa(
+             String.fromCharCode(...new Uint8Array(image.data.data))
+           );
           return (
             <div
               key={index}
@@ -72,10 +115,16 @@ function SinglePosts() {
                 />
                 <h1 className="singlePostTitle text-center">
                   {value.title}
+                  
+                 
                   <div className="singlePostEdit">
-                    <i className="singlePostIcon fa-sharp fa-solid fa-pen-to-square"></i>
-                    <i className="singlePostIcon fa-solid fa-trash"></i>
+        
+                  <div className="singlePostIcon">
+                  <FiIcons.FiEdit onClick={() => setupdateMode(true)}/>
+                    <FaIcons.FaRegTrashAlt onClick={handleDelete}/>
                   </div>
+                  </div>
+                  
                 </h1>
                 <div className="singlePostInfo">
                   <span className="singlePostAuthor">
@@ -89,10 +138,12 @@ function SinglePosts() {
                 <p className="singlePostDesc">{value.story}</p>
                 <br />
                 <hr />
+                {user ? 
                 <Comments
                   commentsUrl="http://127.0.0.1:5173/"
                   currentUserId="1"
-                />
+                />:
+                  null} 
               </div>
               <hr />
               {!loadin && post.length <= 0 && (

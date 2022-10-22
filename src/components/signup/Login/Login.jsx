@@ -9,8 +9,7 @@
 //   let [email, setEmail] = useState("");
 //   let [password, setPassword] = useState("")
 //   const [loading, setLoading] = useState(false)
-//   const navigate = useNavigate() 
-  
+//   const navigate = useNavigate()
 
 //   const HandleLogin = async(e) => {
 //   e.preventDefault();
@@ -23,7 +22,7 @@
 //     } else {
 //         const User = {
 //             email,
-//             password, 
+//             password,
 //         }
 
 //         console.log(User);
@@ -55,7 +54,7 @@
 //        <form onSubmit={HandleLogin}>
 //         <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
 //         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
-//         <button type='submit'> 
+//         <button type='submit'>
 //         <span hidden={!loading} className="spinner-border spinner-border-sm"></span>
 //         <span> Login </span>
 //         </button>
@@ -66,89 +65,89 @@
 
 // export default Login
 
-
-
-import React, { useState } from 'react'
-import axios from "axios"
+import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useRef } from 'react';
-import { Context } from '../../../Context/Contex';
-import { useContext } from 'react';
+import { useRef } from "react";
+import { Context } from "../../../Context/Contex";
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
 
-
-import "./Login.css"
+import "./Login.css";
 
 function Login() {
-
-  // let [email, setEmail] = useState("");
-  // let [password, setPassword] = useState("")
-  const [loading, setLoading] = useState(false)
-  // const navigate = useNavigate() 
-  const emailRef = useRef();
-  const passwordRef = useRef(); 
-  const {user, dispatch, isFetching} = useContext(Context)
-  
-
-  const handleLogin = async (e) => {
-  e.preventDefault();
-  dispatch({ type: "LOGIN_START" })
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
 
 
-    // email = email.trim();
-    // password = password.trim();
+  const userRef = useRef();
+  const passwordRef = useRef();
 
-    // if (!email || !password) {
-    //     return alert("Fill In The Empty Fields")
-    // } else {
-        const User = {
-            // email,
-            // password, 
-            username: emailRef.current.value,
-            password: passwordRef.current.value,
+  const { dispatch, isFetching } = useContext(Context);
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    // userRef = userRef.trim()
+    // passwordRef = passwordRef.trim()
 
 
-        }
+    dispatch({ type: "LOGIN_START" });
+    
 
-    //     console.log(User);
-        try {
-          setLoading(true);
-            // const url = "https://active-info.onrender.com/login";
-            const url = "https://blog-9i5d.onrender.com/login";
-            const response = await axios.post(url, User);
-            dispatch({ type: "LOGIN_SUCCESSFUL", payload: response.data})
-            console.log(response);
-            // console.log(response.data);
-            // console.log(response.data.message);
-            // navigate('/')
+    if (!userRef || !passwordRef) {
+              return alert("Fill In The Empty Fields")
+          } else {
+            const User = {
+              username: userRef.current.value,
+              password: passwordRef.current.value,
+            };
+             
 
-        } catch (error) {
-            console.log(error);
-            // console.log(error.response.data);
-            // console.log(error.response.data.message);
-            dispatch({type:"LOGIN_FAILURE"})
-        } finally{
-          setLoading(false);
-        }
-       
+    console.log(User);
+   
+    try {
+      setLoading(true);
+
+      const url = "https://blog-9i5d.onrender.com/login";
+      const response = await axios.post(url, User);
+      dispatch({ type: "LOGIN_SUCCESSFUL", payload: response.data });
+      console.log(response);
+
+      console.log(response.data);
+      console.log(response.data.message);
+       navigate('/')
+
+    } catch (error) {
+      console.log(error);
+
+      dispatch({ type: "LOGIN_FAILURE" });
+    } finally {
+      setLoading(false);
+    }
   }
-  console.log(user);
+  };
 
-
- 
 
   return (
-    <div className='login '>
-       <h1>Login</h1>
-       <form onSubmit={handleLogin}>
-        <input type="email" placeholder='Username' ref={emailRef} />
-        <input type="password" placeholder='Password' ref={passwordRef} />
-        <button type='submit'> 
-        <span hidden={!loading} className="spinner-border spinner-border-sm"></span>
-        <span> Login </span>
+
+
+    <div className="login">
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <input type="text" placeholder="Username" ref={userRef} />
+        <input type="password" placeholder="Password" ref={passwordRef} />
+        <button type="submit">
+          <span
+            hidden={!loading}
+            className="spinner-border spinner-border-sm"
+          ></span>
+          <span> Login </span>
+
+
         </button>
-       </form>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
