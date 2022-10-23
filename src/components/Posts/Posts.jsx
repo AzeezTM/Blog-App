@@ -9,7 +9,7 @@ function Posts() {
     <div className='posts'>
       
     <Post/>
-
+    
     </div>
   );
 }

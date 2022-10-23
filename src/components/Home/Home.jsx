@@ -15,7 +15,7 @@ import axios from "axios";
 
 function Home() {
 
- 
+
 
   return (
     <>
@@ -31,8 +31,7 @@ function Home() {
           </h1>
         </div>
         <Topbar />
-
-       
+        <Posts />
 
         {/* <h1>{posts.title}</h1> */}
       </div>

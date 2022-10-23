@@ -19,15 +19,17 @@ import { Context, ContextProvider } from './Context/Contex';
 
 
 function App() {
- 
+
   return (
 
-   <main>    
-     <Outlet/>
-    main
-        <Footer/>
+    <main>
+      <Outlet />
+      {/* main */}
+      {/* <Home/> */}
 
-   </main>
+      <Footer />
+
+    </main>
   )
 
 }
