@@ -7,7 +7,12 @@
 
 
 
-  
+  .links ul{
+    border: 0 !important;
+  }
+  .links ul li a:hover{
+background-color: transparent !important;
+  }
   .footer {
     overflow: hidden;
     width: 100%;
