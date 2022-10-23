@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-=======
+
 .display-post {
     display: flex;
     align-items: flex-end;
     position: relative;
-    top: -130px;
+    /* top: -130px; */
 
     flex-wrap: wrap;
     
@@ -128,4 +127,3 @@
              
     }
   }
->>>>>>> d4e403232a96d97372a742f84428a9f992428ef2

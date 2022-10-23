@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
@@ -17,7 +15,7 @@ import axios from "axios";
 
 function Home() {
 
- 
+
 
   return (
     <>
@@ -33,8 +31,7 @@ function Home() {
           </h1>
         </div>
         <Topbar />
-
-       
+        <Posts />
 
         {/* <h1>{posts.title}</h1> */}
       </div>
@@ -43,4 +40,3 @@ function Home() {
 }
 
 export default Home;
->>>>>>> d4e403232a96d97372a742f84428a9f992428ef2

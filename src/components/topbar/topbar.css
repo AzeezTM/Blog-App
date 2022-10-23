@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 *{
     margin:0;
     padding: 0;
@@ -79,7 +78,7 @@ a{
 
 }
 .btn:hover{
-    padding: 15px;
+    /* padding: 15px; */
     background-color:rgb(241, 213, 128);
     
 }
@@ -116,4 +115,3 @@ a{
     border-bottom: 4px solid white;
     border-radius: 0px !important;
 } */
->>>>>>> d4e403232a96d97372a742f84428a9f992428ef2
