@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from "react";
 import "./Post.css";
 import { Link } from "react-router-dom";

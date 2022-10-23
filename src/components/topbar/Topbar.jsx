@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 =======
 import * as GrIcons from "react-icons/gr";
-
 import blogimg from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
 import { Link } from "react-router-dom";
 import "./topbar.css";
@@ -12,10 +11,6 @@ import { useEffect } from "react";
 function Topbar() {
 
   const [cat, setCat] = useState([]);
-  
-
-
-
   const BLOG_API = "https://blog-9i5d.onrender.com";
 
   useEffect(() => {
@@ -43,10 +38,6 @@ function Topbar() {
     setPost(updateList);
 
 }
-
-
-          
-
 
   return (
     <div className=" ">
@@ -78,13 +69,6 @@ function Topbar() {
 
     </div>
 
-
-  
-
-
-
   );
 }
-
 export default Topbar;
->>>>>>> d4e403232a96d97372a742f84428a9f992428ef2
