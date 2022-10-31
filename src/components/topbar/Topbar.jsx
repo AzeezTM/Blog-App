@@ -8,56 +8,25 @@ import { useEffect } from "react";
 
 
 function Topbar() {
-
-  // const [cat, setCat] = useState([]);
-  // const BLOG_API = "https://blog-9i5d.onrender.com";
-
-  // useEffect(() => {
-  //   const showPosts = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const { data } = await axios.get(`${BLOG_API}/blog-post`);
-  //       setCat(data.blog);
-  //       console.log(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //       setLoading(false);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   showPosts();
-
-  // }, []);
-
-
-
-  // const filterBlog = (cate) => {
-  //   const updateList = cat.filter((x) => x.category === cate);
-  //   setPost(updateList);
-
-  // }
-
   return (
     <div className=" ">
       <div className="topbar">
         <div className=" div nav-pills">
           <div className="sectB">
-            <Link className="btn item text-light" to={"/post"}>All</Link>
+            <Link className="btn item text-light" to={"/"}>All</Link>
             <Link className="btn item text-light"
-              to={"/post/tech"}>Tech</Link>
+              to={"/tech"}>Tech</Link>
             <Link className="btn item text-light"
-              to={"/post/sport"}>Sport</Link>
+              to={"/sport"}>Sport</Link>
             <Link className="btn item text-light"
-              to={"/post/entertainment"}>Entertainment</Link>
+              to={"/entertainment"}>Entertainment</Link>
             <Link className="btn item text-light"
-              to={"/post/nature"}>Nature</Link>
-
+              to={"/nature"}>Nature</Link>
           </div>
         </div>
       </div>
       <div className="d-flex p-3 kk">
-       
+
       </div>
     </div>
   );
