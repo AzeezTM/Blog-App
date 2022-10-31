@@ -119,6 +119,11 @@
 .postcats{
     /* color: rgb(53, 108, 153); */
 }
+.nopost{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: auto;
+}
 
 @media (max-width: 767px) {
 

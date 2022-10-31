@@ -1,4 +1,5 @@
 import React from 'react'
+import { Outlet } from 'react-router';
 // import "./Post.css"
 import Post from '../Post/Post'
 
@@ -9,7 +10,7 @@ function Posts() {
     <div className='posts'>
       
     <Post/>
-    
+    {/* <Outlet/> */}
     </div>
   );
 }
