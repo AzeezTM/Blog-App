@@ -145,7 +145,7 @@ function Footer() {
            
              </div> */}
              <hr />
-              <p className="">Copyright &copy; 2022 Dev. ATM, <a href="mailto:ismailhabeeboluwatobi995@gmail.com">Dev. MAHISH</a> </p>
+              <p >Copyright &copy; 2022 <a className="Name" href="https://github.com/AzeezTM">Dev. ATM,</a> <a className="Name" href="mailto:ismailhabeeboluwatobi995@gmail.com">Dev. MAHISH</a> </p>
            </div>
            
                                
