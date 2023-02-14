@@ -112,3 +112,10 @@ block-size: auto;
     }
   
   }
+  .Name{
+    color: #a7a7a7;
+  }
+  .Name:hover {
+    color: rgb(13, 202, 240);
+  }
+ 
