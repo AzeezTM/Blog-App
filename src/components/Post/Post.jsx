@@ -1,17 +1,17 @@
 import React from "react";
 import "./Post.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
-import { AxiosError } from "axios";
-import axios from "axios";
-import { useEffect } from "react";
-import * as GrIcons from "react-icons/gr";
-import blogimg from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
-import Topbar from "../topbar/Topbar";
-import { getComments as getCommentsApi, } from "../api";
-import { Context } from "../../Context/Contex";
-import { useContext } from "react";
+// import { useState } from "react";
+// import { AxiosError } from "axios";
+// import axios from "axios";
+// import { useEffect } from "react";
+// import * as GrIcons from "react-icons/gr";
+// import blogimg from './240_F_217131611_yZ1uedmyiiLAH82qv3V3A6ioWPXCOdxC.jpg'
+// import Topbar from "../topbar/Topbar";
+// import { getComments as getCommentsApi, } from "../api";
+// import { Context } from "../../Context/Contex";
+// import { useContext } from "react";
 
 function Post() {
   // let [like, setLike] = useState("🤍");

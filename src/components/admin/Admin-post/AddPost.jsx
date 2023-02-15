@@ -8,8 +8,7 @@ import { Context } from "../../../Context/Contex";
 import { useContext } from "react";
 
 
-export default function AddPost() {
-  
+export default function AddPost() {  
 
   const [story, setStory] = useState("");
   const [file, setFile] = useState("");
@@ -17,12 +16,28 @@ export default function AddPost() {
   const [Categories, setCategories] = useState("");
   const { user } = useContext(Context);
   const [author, setAuthor] = useState(user.user.username);
+  let [profile, setProfile] = useState('')
 
-  function handleFile(e) {
-    console.log(e.target.files[0]);
-    setFile(e.target.files[0]);
-    console.log(file);
-  }
+  // function handleFile(e) {
+  //   console.log(e.target.files[0]);
+  //   setFile(e.target.files[0]);
+  //   console.log(file);
+  // }
+  const handleFile = async (ev) => {
+    const newImage = ev.target.files[0]
+    try {
+        const formData = new FormData()
+        formData.append("file", newImage)
+        formData.append("upload_preset", "ghrauhb")
+        const request = await axios.post("http://api.cloudinary.com/v1_1/dnsenxdow/image/upload", formData)
+        profile = request.data["secure_url"]
+        setProfile(profile)
+        console.log(profile);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 
   const handlesubmit = async (e) => {
     e.preventDefault();

@@ -81,7 +81,7 @@ export default function Entertainment() {
             </div>
           </div>
         )}
-      {!loading && APIData.length > 0  &&
+      {!loading && APIData.length > 0 &&
         < div style={{ padding: 20 }}>
 
           <Card.Group itemsPerRow={3} style={{ marginTop: 20 }}>
@@ -122,7 +122,7 @@ export default function Entertainment() {
 
                         <nav id="" className="like">
                           <div className="likes ">
-                            <button id="changeLike" className="rounded-pill narbar">
+                            <div id="changeLike" className="rounded-pill narbar btn">
                               <button onClick={(eve) => addLikes(eve, "❤️")}>
                                 ❤️
                               </button>
@@ -138,19 +138,19 @@ export default function Entertainment() {
                               <button onClick={(eve) => addLikes(eve, "😡")}>
                                 😡
                               </button>
-                            </button>
+                            </div>
                             <button className="likeB btn-likeB bg-light">
                               {like}
                             </button>
                           </div>
                           {user ?
                             <Link to={`/post/${index}`} className="btn-comment text-dark bg-light">
-                              <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
+                              <p className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></p>{" "}
                               Comment
                             </Link>
                             :
                             <Link to={"/signup"} className="btn-comment text-dark bg-light">
-                              <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
+                              <p className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></p>{" "}
                               Comment
                             </Link>
                           }

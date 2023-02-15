@@ -26,7 +26,6 @@ function SinglePosts() {
   const [loadin, setLoadin] = useState(true);
 
   useEffect(() => {
-    // console.log(id)
     const getPosts = async () => {
       try {
         setLoadin(true);
@@ -35,13 +34,7 @@ function SinglePosts() {
         let main = data.blog[`${id}`];
         post.push(main);
         setPost(post);
-        console.log(data);
-        // console.log(data.blog[`${id}`]);
       } catch (error) {
-        // const data = 0
-        // setPost(data);
-        // console.log(error);
-        // setLoadin(false)
       } finally {
         setLoadin(false);
       }
@@ -95,8 +88,8 @@ function SinglePosts() {
       {!loadin &&
         post.length > 0 &&
         post.map((value, index) => {
-          console.log(value.author);
-          console.log(value.category);
+          // console.log(value.author);
+          // console.log(value.category);
           
            const { _id, image } = value;
            const base64String = btoa(

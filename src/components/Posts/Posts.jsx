@@ -1,16 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router';
-// import "./Post.css"
 import Post from '../Post/Post'
-
-function Posts() {
-  // console.log(post)
-  
+function Posts() {  
   return (
     <div className='posts'>
-      
     <Post/>
-    {/* <Outlet/> */}
     </div>
   );
 }
