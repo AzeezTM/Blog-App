@@ -29,7 +29,7 @@ export default function All() {
         const { data } = await axios.get(`${BLOG_API}/blog-post`);
         setAPIData(data.blog);
         console.log(data);
-       
+
       } catch (error) {
         const data = 0
         setAPIData(data);
@@ -50,7 +50,7 @@ export default function All() {
       setBackendComments(data);
     });
   }, [])
-    function addLikes(adde, param) {
+  function addLikes(adde, param) {
     like = param;
     setLike(like);
     selects = false;
@@ -76,7 +76,7 @@ export default function All() {
             </div>
           </div>
         )}
-      {!loading && APIData.length >=1 &&
+      {!loading && APIData.length >= 1 &&
         < div style={{ padding: 20 }}>
 
           <Card.Group itemsPerRow={3} style={{ marginTop: 20 }}>
@@ -121,7 +121,7 @@ export default function All() {
 
                         <nav id="" className="like">
                           <div className="likes ">
-                            <button id="changeLike" className="rounded-pill narbar">
+                            <div id="changeLike" className="rounded-pill narbar btn">
                               <button onClick={(eve) => addLikes(eve, "❤️")}>
                                 ❤️
                               </button>
@@ -137,19 +137,19 @@ export default function All() {
                               <button onClick={(eve) => addLikes(eve, "😡")}>
                                 😡
                               </button>
-                            </button>
+                            </div>
                             <button className="likeB btn-likeB bg-light">
                               {like}
                             </button>
                           </div>
                           {user ?
                             <Link to={`/post/${index}`} className="btn-comment text-dark bg-light">
-                              <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
+                              <p className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></p>{" "}
                               Comment
                             </Link>
                             :
                             <Link to={"/signup"} className="btn-comment text-dark bg-light">
-                              <a className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></a>{" "}
+                              <p className="singlePostIcon fa-sharp fa-solid fa-pen-to-square text-dark "></p>{" "}
                               Comment
                             </Link>
                           }
@@ -161,9 +161,9 @@ export default function All() {
               )
             )}
           </Card.Group>
-          
+
         </div>
-        
+
       }
 
       {
