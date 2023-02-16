@@ -16,7 +16,7 @@ export default function AddPost() {
   const [Categories, setCategories] = useState("");
   const { user } = useContext(Context);
   const [author, setAuthor] = useState(user.user.username);
-  let [profile, setProfile] = useState('')
+  const [profile, setProfile] = useState('')
 
   // function handleFile(e) {
   //   console.log(e.target.files[0]);
@@ -41,7 +41,7 @@ export default function AddPost() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    setFile("")
+    setProfile("")
     setTitle("")
     setCategories("")
     setStory("")
@@ -50,7 +50,7 @@ export default function AddPost() {
     console.log(url);
     const formData = new FormData();
 
-    formData.set("image", file);
+    formData.set("image", profile);
     formData.set("story", story);
     formData.set("category", Categories);
     formData.set("title", title);
