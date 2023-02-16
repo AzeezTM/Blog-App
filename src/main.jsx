@@ -25,6 +25,7 @@ import All from './components/categories/all';
 import Sport from './components/categories/sport'
 import Tech from './components/categories/tech'
 import Nature from './components/categories/nature'
+import { Suspense } from 'react';
 
 const router = createBrowserRouter([
 
@@ -67,9 +68,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
+    <Suspense>
     <ContextProvider>
       <RouterProvider router={router} />
     </ContextProvider>
+    </Suspense>
   </React.StrictMode>
 
 )
