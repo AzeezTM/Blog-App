@@ -8,7 +8,7 @@ import { Context } from "../../../Context/Contex";
 import { useContext } from "react";
 
 
-export default function AddPost() {  
+export default function AddPost() {
 
   const [story, setStory] = useState("");
   const [file, setFile] = useState("");
@@ -16,7 +16,7 @@ export default function AddPost() {
   const [Categories, setCategories] = useState("");
   const { user } = useContext(Context);
   const [author, setAuthor] = useState(user.user.username);
-  let [profile, setProfile] = useState('')
+  let [profile, setProfile] = useState()
 
   // function handleFile(e) {
   //   console.log(e.target.files[0]);
@@ -26,25 +26,22 @@ export default function AddPost() {
   const handleFile = async (ev) => {
     const newImage = ev.target.files[0]
     try {
-        const formData = new FormData()
-        formData.append("file", newImage)
-        formData.append("upload_preset", "ghrauhb")
-        const request = await axios.post("http://api.cloudinary.com/v1_1/dnsenxdow/image/upload", formData)
-        profile = request.data["secure_url"]
-        setProfile(profile)
-        console.log(profile);
+      const formData = new FormData()
+      formData.append("file", newImage)
+      formData.append("upload_preset", "ghrauhb")
+      const request = await axios.post("http://api.cloudinary.com/v1_1/dnsenxdow/image/upload", formData)
+      profile = request.data["secure_url"]
+      setProfile(profile)
+      console.log(profile);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
 
-}
+  }
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    setProfile("")
-    setTitle("")
-    setCategories("")
-    setStory("")
+
 
     const url = "https://blog-9i5d.onrender.com/upload";
     console.log(url);
@@ -60,8 +57,13 @@ export default function AddPost() {
       const response = await axios.post(url, formData);
       console.log(response.data);
       console.log(formData);
+      setProfile("")
+      setTitle("")
+      setCategories("")
+      setStory("")
     } catch (error) {
       console.log(error);
+      alert("can't add to blog")
     }
   };
 
@@ -91,7 +93,7 @@ export default function AddPost() {
 
             <div className="write">
               <form action="" className="writeForm" onSubmit={handlesubmit}>
-                <div  className="writeFormGroup">
+                <div className="writeFormGroup">
                   <label htmlFor="file" className="licon mb-3">
                     <AiIcons.AiOutlinePlusCircle />
                   </label>
@@ -125,7 +127,7 @@ export default function AddPost() {
                 </div>
                 <div>
                   <input
-                  required
+                    required
                     type="text"
                     placeholder="Title"
                     style={{ fontSize: "20px", fontWeight: "bold" }}
@@ -137,7 +139,7 @@ export default function AddPost() {
 
                 <div className="writeFormGroup">
                   <textarea
-                  required
+                    required
                     placeholder="Tell your story ..."
                     type="text"
                     style={{ height: "300px" }}
