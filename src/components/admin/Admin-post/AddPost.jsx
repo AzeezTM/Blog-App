@@ -23,21 +23,7 @@ export default function AddPost() {
   //   setFile(e.target.files[0]);
   //   console.log(file);
   // }
-  const handleFile = async (ev) => {
-    const newImage = ev.target.files[0]
-    try {
-      const formData = new FormData()
-      formData.append("file", newImage)
-      formData.append("upload_preset", "ghrauhb")
-      const request = await axios.post("http://api.cloudinary.com/v1_1/dnsenxdow/image/upload", formData)
-      profile = request.data["secure_url"]
-      setProfile(profile)
-      console.log(profile);
-    } catch (error) {
-      console.log(error);
-    }
-
-  }
+ 
 
   const handlesubmit = async (e) => {
     e.preventDefault();
@@ -71,6 +57,24 @@ export default function AddPost() {
   console.log(author);
 
   console.log(Categories);
+
+
+  const handleFile = async (ev) => {
+    const newImage = ev.target.files[0]
+    try {
+      const formData = new FormData()
+      formData.append("file", newImage)
+      formData.append("upload_preset", "ghrauhb")
+      const request = await axios.post("http://api.cloudinary.com/v1_1/dnsenxdow/image/upload", formData)
+      profile = request.data["secure_url"]
+      setProfile(profile)
+      console.log(profile);
+    } catch (error) {
+      console.log(error);
+      alert("can not upload image")
+    }
+
+  }
 
   return (
     <>
