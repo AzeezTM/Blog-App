@@ -16,7 +16,7 @@ export default function AddPost() {
   const [Categories, setCategories] = useState("");
   const { user } = useContext(Context);
   const [author, setAuthor] = useState(user.user.username);
-  const [profile, setProfile] = useState('')
+  let [profile, setProfile] = useState('')
 
   // function handleFile(e) {
   //   console.log(e.target.files[0]);
